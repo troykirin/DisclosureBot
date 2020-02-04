@@ -8,21 +8,28 @@ r = sr.Recognizer()
 # analyze entire audio source
 # %% Set directory & file
 snippetDIR = '/Users/troy/APFM/ROOT_CO/Snippets'
-snippet = snippetDIR + '/LID19575241_CID84488994_Ronald_Robinson_20200117.mp3'
+snippet = snippetDIR + '/LID19575241_CID84488994_Ronald_Robinson_20200117.wav'
 print(snippet)
 
 # %% Process
-processAudioFile = sr.AudioFile(
-    '')
+# Call sr on autofile type "snippet"
+processAudioFile = sr.AudioFile(snippet)
 
-with test as source:
+# Check file type
+type(processAudioFile)
+
+# %%
+
+with processAudioFile as source:
     audio = r.record(source)
 type(audio)
 transcription = r.recognize_google(audio)
 print(transcription)
 
+# %%
 # save to a text file
-file = open(r"python-speech-recognition/audio_files/text.txt", "w+")
+file = open(
+    r"/Users/troy/APFM/ROOT_CO/Snippets/transcriptions/latest.txt", "w+")
 test = 'test'
 file.write(test)
 file.close()
