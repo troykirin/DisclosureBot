@@ -6,9 +6,14 @@ sr.__version__
 r = sr.Recognizer()
 
 # analyze entire audio source
-# %% test
-test = sr.AudioFile(
-    'python-speech-recognition/audio_files/test.wav')
+# %% Set directory & file
+snippetDIR = '/Users/troy/APFM/ROOT_CO/Snippets'
+snippet = snippetDIR + '/LID19575241_CID84488994_Ronald_Robinson_20200117.mp3'
+print(snippet)
+
+# %% Process
+processAudioFile = sr.AudioFile(
+    '')
 
 with test as source:
     audio = r.record(source)
