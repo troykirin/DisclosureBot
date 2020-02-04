@@ -42,26 +42,33 @@ def saveTranscriptionToFile(transcription):
 test = processAudioFile  # reuse audiofile from before
 
 with test as source:
-    audio1 = r.record(source, duration=30)
-    # audio2 = r.record(source, duration=40)
-    # audio3 = r.record(source, duration=40)
+    # measure of duration and offset in seconds
+    audio1 = r.record(source, offset=0, duration=5)
+    audio2 = r.record(source, offset=5, duration=5)
+    audio3 = r.record(source, offset=10, duration=5)
     # audio4 = r.record(source, duration=40)
     # audio5 = r.record(source, duration=40)
     # audio6 = r.record(source, duration=40)
     # audio7 = r.record(source, duration=40)
 
-# %% Save snippets to File
-print(type(audio1))
-
-# Run transcription in Cloud
-resultFromCloud = r.recognize_google(audio1)
-saveTranscriptionToFile(resultFromCloud)
-print(resultFromCloud)
-# print(r.recognize_google(audio2))
-# print(r.recognize_google(audio3))
+print(r.recognize_google(audio1))
+print(r.recognize_google(audio2))
+print(r.recognize_google(audio3))
 # print(r.recognize_google(audio4))
 # print(r.recognize_google(audio5))
 # print(r.recognize_google(audio6))
 # print(r.recognize_google(audio7))
+
+# %% Run transcription in Cloud
+
+# - will return a dictionary to see possibilities
+# resultFromCloud = r.recognize_google(audio1, show_all=True)
+# - return just string
+# resultFromCloud = r.recognize_google(audio1)  # return a string
+# saveTranscriptionToFile(resultFromCloud)
+# print(resultFromCloud)
+
+for k, v in resultFromCloud.items():
+    print(k, v)
 
 # %%
