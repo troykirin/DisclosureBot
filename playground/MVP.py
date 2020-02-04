@@ -2,6 +2,7 @@
 
 # %%
 import speech_recognition as sr
+from os import path
 sr.__version__
 r = sr.Recognizer()
 
