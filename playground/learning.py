@@ -1,12 +1,19 @@
-# Play with wav audio file speech to text
+# Description: Play with wav audio file speech to text
+# Goal: Understand API better
 
-# %%
+# %% Setup
+# Import lib
 import speech_recognition as sr
+
+# print verison
 sr.__version__
+
+# Recognizer function within library
 r = sr.Recognizer()
 
-# analyze entire audio source
 # %%
+
+# analyze entire audio source
 harvard = sr.AudioFile(
     'python-speech-recognition/audio_files/harvard.wav')
 
