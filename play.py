@@ -15,6 +15,15 @@ with harvard as source:
 type(audio)
 r.recognize_google(audio)
 
+# %% test
+test = sr.AudioFile(
+    'python-speech-recognition/audio_files/test.flac')
+
+with test as source:
+    audio = r.record(source)
+type(audio)
+r.recognize_google(audio)
+
 # %% analyze audio is snippets
 harvard = sr.AudioFile(
     "python-speech-recognition/audio_files/harvard.wav")
