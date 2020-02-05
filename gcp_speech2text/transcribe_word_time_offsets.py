@@ -23,7 +23,7 @@ Example usage:
     python transcribe_word_time_offsets.py -s <language> resources/audio.raw
     python transcribe_word_time_offsets.py -s <language> \gs://cloud-samples-tests/speech/vr.flac
 """
-# %%
+
 import argparse
 import io
 
@@ -33,21 +33,26 @@ from google.oauth2 import service_account
 credentials = service_account.Credentials.from_service_account_file(
     'api-key.json')
 
-# %%
 
-
-def transcribe_file_with_word_time_offsets(speech_file, language):
+def transcribe_file_with_word_time_offsets(speech_file, language='en-US'):
     """Transcribe the given audio file synchronously and output the word time
     offsets."""
     print("Start")
 
-    from google.cloud import speech
-    from google.cloud.speech import enums
+# STABLE
+    # from google.cloud import speech
+    # from google.cloud.speech import enums
+    # from google.cloud.speech import types
+
+    # BETA
+    from google.cloud import speech_v1p1beta1
+    from google.cloud.speech_v1p1beta1 import enums
     from google.cloud.speech import types
 
     print("checking credentials")
 
-    client = speech.SpeechClient(credentials=credentials)
+    # client = speech.SpeechClient(credentials=credentials) # Stable
+    client = speech_v1p1beta1.SpeechClient(credentials=credentials)  # BETA
 
     print("Checked")
     with io.open(speech_file, 'rb') as audio_file:
@@ -59,7 +64,7 @@ def transcribe_file_with_word_time_offsets(speech_file, language):
 
     print("config start")
     config = types.RecognitionConfig(
-        encoding=enums.RecognitionConfig.AudioEncoding.FLAC,
+        encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
         language_code=language,
         enable_word_time_offsets=True)
 
@@ -82,20 +87,47 @@ def transcribe_file_with_word_time_offsets(speech_file, language):
 
 
 # [START def_transcribe_gcs]
-def transcribe_gcs_with_word_time_offsets(gcs_uri, language):
+def transcribe_gcs_with_word_time_offsets(gcs_uri, language='en-US'):
     """Transcribe the given audio file asynchronously and output the word time
     offsets."""
-    from google.cloud import speech
-    from google.cloud.speech import enums
-    from google.cloud.speech import types
-    client = speech.SpeechClient()
+
+    # Stable
+
+    # from google.cloud import speech
+    # from google.cloud.speech import enums
+    # from google.cloud.speech import types
+
+    # BETA
+    from google.cloud import speech_v1p1beta1
+    from google.cloud.speech_v1p1beta1 import enums
+    from google.cloud.speech_v1p1beta1 import types
+
+    # client = speech.SpeechClient()  # STABLE
+    client = speech_v1p1beta1.SpeechClient(credentials=credentials)  # BETA
+
+    phrases = ['disclosure', 'yes', 'yeah',
+               'thank you', 'Can you please confirm you are', 'In addition to confirming your name, I need a record that I’ve provided you with these disclosures & I also need you to sign it. But to make things easier for you, instead of having to physically sign something, we can actually have you sign over the phone now by recording this conversation. Is that alright?', 'Just to let you know, our service is free to you because we are paid a referral fee by our partner communities only if we help you find a good fit and you decide to move in. That fee ranges from 78 % to 120 % of the first month’s rent, depending upon the agreement. No one can ever charge you more because you use our services. Do you understand that our services are free to you?']
+
+    boost = 20.0
+    speech_contexts_element = {"phrases": phrases, "boost": boost}
+    speech_contexts = [speech_contexts_element]
 
     audio = types.RecognitionAudio(uri=gcs_uri)
-    config = types.RecognitionConfig(
-        encoding=enums.RecognitionConfig.AudioEncoding.FLAC,
-        sample_rate_hertz=16000,
-        language_code=language,
-        enable_word_time_offsets=True)
+
+    config = {
+        "encoding": enums.RecognitionConfig.AudioEncoding.LINEAR16,
+        "sample_rate_hertz": 8000,
+        "language_code": 'en-US',
+        "enable_word_time_offsets": True,
+        "speech_contexts": speech_contexts
+    }
+
+    # config = types.RecognitionConfig(
+    #     encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
+    #     sample_rate_hertz=8000,
+    #     language_code=language,
+    #     enable_word_time_offsets=True,
+    # )
 
     operation = client.long_running_recognize(config, audio)
 
