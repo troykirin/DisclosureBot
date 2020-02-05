@@ -106,7 +106,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri, language='en-US'):
     client = speech_v1p1beta1.SpeechClient(credentials=credentials)  # BETA
 
     phrases = ['disclosure', 'yes', 'yeah',
-               'thank you', 'Can you please confirm you are', 'In addition to confirming your name,', 'I need a record that I’ve provided you with these disclosures', 'I also need you to sign it.', 'But to make things easier for you, instead of having to physically sign something,', 'we can actually have you sign over the phone now by recording this conversation.', 'Is that alright?', 'Just to let you know,', 'our service is free to you', 'because we are paid a referral fee by our partner communities', ' only if we help you find a good fit', ' and you decide to move in.', 'That fee ranges from 78 % to 120 % of the first month’s rent, depending upon the agreement.', 'No one can ever charge you more because you use our services. ', 'Do you understand that our services are free to you?']
+               'thank you', 'Can you please confirm you are', 'In addition to confirming your name,', 'I need a record that I’ve provided you with these disclosures', 'I also need you to sign it.', 'But to make things easier for you, instead of having to physically sign something,', 'we can actually have you sign over the phone now by recording this conversation.', 'Is that alright?', 'Just to let you know,', 'our service is free to you', 'because we are paid a referral fee by our partner communities', ' only if we help you find a good fit', ' and you decide to move in.', 'That fee ranges from 78 % to 120 % of the first month’s rent, depending upon the agreement.', 'No one can ever charge you more because you use our services. ', 'Do you understand that our services are free to you?', "That's fine."]
 
     boost = 20.0
     speech_contexts_element = {"phrases": phrases, "boost": boost}
@@ -137,6 +137,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri, language='en-US'):
     for result in result.results:
         alternative = result.alternatives[0]
         print('Transcript: {}'.format(alternative.transcript))
+        # TODO: Insert write to file
         print('Confidence: {}'.format(alternative.confidence))
 
         for word_info in alternative.words:
