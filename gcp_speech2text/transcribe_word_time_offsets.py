@@ -102,11 +102,20 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri, language='en-US'):
     from google.cloud.speech_v1p1beta1 import enums
     from google.cloud.speech_v1p1beta1 import types
 
+    # Set language
+    language = 'en-US'
+
+    # Get gci
+    gcs_uri = input("Please enter gcs_uri: ")
+    print("You just entered: ", gcs_uri)
+
     # client = speech.SpeechClient()  # STABLE
     client = speech_v1p1beta1.SpeechClient(credentials=credentials)  # BETA
 
     phrases = ['disclosure', 'yes', 'yeah',
                'thank you', 'Can you please confirm you are', 'In addition to confirming your name,', 'I need a record that I’ve provided you with these disclosures', 'I also need you to sign it.', 'But to make things easier for you, instead of having to physically sign something,', 'we can actually have you sign over the phone now by recording this conversation.', 'Is that alright?', 'Just to let you know,', 'our service is free to you', 'because we are paid a referral fee by our partner communities', ' only if we help you find a good fit', ' and you decide to move in.', 'That fee ranges from 78 % to 120 % of the first month’s rent, depending upon the agreement.', 'No one can ever charge you more because you use our services. ', 'Do you understand that our services are free to you?', "That's fine."]
+
+    phrase_file = read_csv
 
     boost = 20.0
     speech_contexts_element = {"phrases": phrases, "boost": boost}
@@ -134,21 +143,43 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri, language='en-US'):
     print('Waiting for operation to complete...')
     result = operation.result(timeout=90)
 
+    # Print to Files
+    transcript_file = open("transcript.txt", "w")
+    transcript_file.write("Below is transcript: \n")
+
+    time_log_file = open("time_log.txt", "w")
+    time_log_file.write("Below is Time Logs: \n")
+    time_log_file = open("time_log.txt", "a")
+
     for result in result.results:
         alternative = result.alternatives[0]
-        print('Transcript: {}'.format(alternative.transcript))
-        # TODO: Insert write to file
+
+        print('Transcript: {} \n'.format(alternative.transcript))
+        transcript_file.write('Transcript: {}'.format(alternative.transcript))
+
         print('Confidence: {}'.format(alternative.confidence))
+        transcript_file.write(
+            'Confidence Score: {}'.format(alternative.confidence))
 
         for word_info in alternative.words:
             word = word_info.word
             start_time = word_info.start_time
             end_time = word_info.end_time
+
+            time_log_file.write('Word: {}, start_time: {}, end_time: {} \n'.format(
+                word,
+                start_time.seconds + start_time.nanos * 1e-9,
+                end_time.seconds + end_time.nanos * 1e-9))
+
             print('Word: {}, start_time: {}, end_time: {}'.format(
                 word,
                 start_time.seconds + start_time.nanos * 1e-9,
                 end_time.seconds + end_time.nanos * 1e-9))
-# [END def_transcribe_gcs]
+
+    transcript_file.close()
+    time_log_file.close()
+
+    # [END def_transcribe_gcs]
 
 
 if __name__ == '__main__':
