@@ -26,12 +26,13 @@ Example usage:
 
 import argparse
 import io
+import csv
 
 from google.oauth2 import service_account
 
 
 credentials = service_account.Credentials.from_service_account_file(
-    'api-key.json')
+    '/Users/troy/APFM-dev/gcp-transcribe-api-key.json')
 
 
 def transcribe_file_with_word_time_offsets(speech_file, language='en-US'):
@@ -87,7 +88,7 @@ def transcribe_file_with_word_time_offsets(speech_file, language='en-US'):
 
 
 # [START def_transcribe_gcs]
-def transcribe_gcs_with_word_time_offsets(gcs_uri, language='en-US'):
+def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-US'):
     """Transcribe the given audio file asynchronously and output the word time
     offsets."""
 
@@ -115,7 +116,15 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri, language='en-US'):
     phrases = ['disclosure', 'yes', 'yeah',
                'thank you', 'Can you please confirm you are', 'In addition to confirming your name,', 'I need a record that I’ve provided you with these disclosures', 'I also need you to sign it.', 'But to make things easier for you, instead of having to physically sign something,', 'we can actually have you sign over the phone now by recording this conversation.', 'Is that alright?', 'Just to let you know,', 'our service is free to you', 'because we are paid a referral fee by our partner communities', ' only if we help you find a good fit', ' and you decide to move in.', 'That fee ranges from 78 % to 120 % of the first month’s rent, depending upon the agreement.', 'No one can ever charge you more because you use our services. ', 'Do you understand that our services are free to you?', "That's fine."]
 
-    phrase_file = read_csv
+    with open('/Users/troy/APFM-dev/transcribe/gcp_speech2text/disclosure_phrases.csv', 'r') as f:
+        reader = csv.reader(f)
+        disclosure_phrase_list = list(reader)
+
+    print(disclosure_phrase_list)
+
+    # [['This is the first line', 'Line1'],
+    #  ['This is the second line', 'Line2'],
+    #  ['This is the third line', 'Line3']]
 
     boost = 20.0
     speech_contexts_element = {"phrases": phrases, "boost": boost}
@@ -145,7 +154,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri, language='en-US'):
 
     # Print to Files
     transcript_file = open("transcript.txt", "w")
-    transcript_file.write("Below is transcript: \n")
+    transcript_file.write("Below is transcript: for {}\n".format(gcs_uri))
 
     time_log_file = open("time_log.txt", "w")
     time_log_file.write("Below is Time Logs: \n")
@@ -155,11 +164,12 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri, language='en-US'):
         alternative = result.alternatives[0]
 
         print('Transcript: {} \n'.format(alternative.transcript))
-        transcript_file.write('Transcript: {}'.format(alternative.transcript))
-
-        print('Confidence: {}'.format(alternative.confidence))
         transcript_file.write(
-            'Confidence Score: {}'.format(alternative.confidence))
+            'Transcript: {} \n'.format(alternative.transcript))
+
+        print('Confidence: {} \n'.format(alternative.confidence))
+        transcript_file.write(
+            'Confidence Score: {} \n'.format(alternative.confidence))
 
         for word_info in alternative.words:
             word = word_info.word
@@ -183,16 +193,19 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri, language='en-US'):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__,
-                                     formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument(
-        dest='path', help='File or GCS path for audio file to be recognized')
-    parser.add_argument("-s", "--string", type=str, required=True)
-    args = parser.parse_args()
-    if args.path.startswith('gs://'):
-        transcribe_gcs_with_word_time_offsets(args.path, args.string)
-    else:
-        transcribe_file_with_word_time_offsets(args.path, args.string)
+    # parser = argparse.ArgumentParser(description=__doc__,
+    #                                  formatter_class=argparse.RawDescriptionHelpFormatter)
+    # parser.add_argument(
+    #     dest='path', help='File or GCS path for audio file to be recognized')
+    # parser.add_argument("-s", "--string", type=str, required=True)
+    # args = parser.parse_args()
+    # if args.path.startswith('gs://'):
+    #     transcribe_gcs_with_word_time_offsets(args.path, args.string)
+    # else:
+    #     transcribe_file_with_word_time_offsets(args.path, args.string)
+    transcribe_gcs_with_word_time_offsets()
 
 
 # %%
+
+# TODO Next step: create a dir with gs created
