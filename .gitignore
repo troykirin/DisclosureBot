@@ -3,3 +3,4 @@
 python-speech-recognition
 gcp_speech2text/time_log.txt
 gcp_speech2text/transcript.txt
+gcp_speech2text/02-11/*
