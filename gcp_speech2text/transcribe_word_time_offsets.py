@@ -27,6 +27,9 @@ Example usage:
 import argparse
 import io
 import csv
+import os
+import errno
+
 
 from google.oauth2 import service_account
 
@@ -67,7 +70,8 @@ def transcribe_file_with_word_time_offsets(speech_file, language='en-US'):
     config = types.RecognitionConfig(
         encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
         language_code=language,
-        enable_word_time_offsets=True)
+        enable_word_time_offsets=True,
+        model=phone_call)
 
     print("Recognizing:")
     response = client.recognize(config, audio)
@@ -137,7 +141,8 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
         "sample_rate_hertz": 8000,
         "language_code": 'en-US',
         "enable_word_time_offsets": True,
-        "speech_contexts": speech_contexts
+        "speech_contexts": speech_contexts,
+        "model": 'phone_call'
     }
 
     # config = types.RecognitionConfig(
@@ -156,20 +161,33 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
     LID = gcs_uri[14:37]
     print(LID)
 
-    path = "./gcp_speech2text/02-12/"
+    pathDir = "/Users/troy/APFM-dev/transcribe/gcp_speech2text/02-13/"
+
+    transcript_filename = pathDir+LID+"_transcript.txt"
+    os.makedirs(os.path.dirname(transcript_filename), exist_ok=True)
+
+    with open(transcript_filename, "w") as f:
+        f.write("Below is transcript: for {}\n".format(gcs_uri))
 
     # Print to Files
-    transcript_file_name = path+LID + "_transcript.txt"
-    print(transcript_file_name)
-    transcript_file = open(transcript_file_name, "x")  # create file
-    transcript_file = open(transcript_file_name, "w")  # write to file
+    # transcript_file_name = path+LID + "_transcript.txt"
+    # print(transcript_file_name)
+    # transcript_file = open(transcript_file_name, "x")  # create file
+    # transcript_file = open(transcript_file_name, "w")  # write to file
+    transcript_file = open(transcript_filename, "w")  # write to file
     transcript_file.write("Below is transcript: for {}\n".format(gcs_uri))
 
-    time_log_file_name = path+LID + "_time_log.txt"
-    time_log_file = open(time_log_file_name, "x")
-    time_log_file = open(time_log_file_name, "w")
-    time_log_file.write("Below is Time Logs: \n")
-    time_log_file = open(time_log_file_name, "a")
+    timeLog_filename = pathDir+LID+"_timeLogs.txt"
+    os.makedirs(os.path.dirname(timeLog_filename), exist_ok=True)
+
+    with open(timeLog_filename, "a") as f:
+        f.write("Below is time_logs: for {}\n".format(gcs_uri))
+
+    # time_log_file_name = path+LID + "_time_log.txt"
+    # time_log_file = open(time_log_file_name, "x")
+    timeLog_file = open(timeLog_filename, "w")
+    timeLog_file.write("Below is Time Logs: \n")
+    timeLog_file = open(timeLog_filename, "a")
 
     for result in result.results:
         alternative = result.alternatives[0]
@@ -187,7 +205,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
             start_time = word_info.start_time
             end_time = word_info.end_time
 
-            time_log_file.write('Word: {}, start_time: {}, end_time: {} \n'.format(
+            timeLog_file.write('Word: {}, start_time: {},end_time: {} \n'.format(
                 word,
                 start_time.seconds + start_time.nanos * 1e-9,
                 end_time.seconds + end_time.nanos * 1e-9))
@@ -198,7 +216,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
                 end_time.seconds + end_time.nanos * 1e-9))
 
     transcript_file.close()
-    time_log_file.close()
+    timeLog_file.close()
 
     # [END def_transcribe_gcs]
 
