@@ -43,12 +43,12 @@ def transcribe_file_with_word_time_offsets(speech_file, language='en-US'):
     offsets."""
     print("Start")
 
-# STABLE
+    # - STABLE BUILD -
     # from google.cloud import speech
     # from google.cloud.speech import enums
     # from google.cloud.speech import types
 
-    # BETA
+    # - BETA Build -
     from google.cloud import speech_v1p1beta1
     from google.cloud.speech_v1p1beta1 import enums
     from google.cloud.speech import types
@@ -93,58 +93,61 @@ def transcribe_file_with_word_time_offsets(speech_file, language='en-US'):
 
 # [START def_transcribe_gcs]
 def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-US'):
-    """Transcribe the given audio file asynchronously and output the word time
-    offsets."""
+    """Transcribe the given audio file asynchronously and output the word time offsets."""
 
-    # Stable
+    # - STABLE BUILD -
 
     # from google.cloud import speech
     # from google.cloud.speech import enums
     # from google.cloud.speech import types
 
-    # BETA
+    # - BETA BUILD -
     from google.cloud import speech_v1p1beta1
     from google.cloud.speech_v1p1beta1 import enums
     from google.cloud.speech_v1p1beta1 import types
 
-    # Set language
+    # Default language to use
     language = 'en-US'
 
-    # Get gci
+    # Ask user for gcs_uri
     gcs_uri = input("Please enter gcs_uri: ")
+    # Print to confirm
     print("You just entered: ", gcs_uri)
 
     # client = speech.SpeechClient()  # STABLE
     client = speech_v1p1beta1.SpeechClient(credentials=credentials)  # BETA
 
-    phrases = ['disclosure', 'yes', 'yeah',
-               'thank you', 'Can you please confirm you are', 'In addition to confirming your name,', 'I need a record that I’ve provided you with these disclosures', 'I also need you to sign it.', 'But to make things easier for you, instead of having to physically sign something,', 'we can actually have you sign over the phone now by recording this conversation.', 'Is that alright?', 'Just to let you know,', 'our service is free to you', 'because we are paid a referral fee by our partner communities', ' only if we help you find a good fit', ' and you decide to move in.', 'That fee ranges from 78 % to 120 % of the first month’s rent, depending upon the agreement.', 'No one can ever charge you more because you use our services. ', 'Do you understand that our services are free to you?', "That's fine."]
+    # list of phrases to use in boost
+    phrases = []
 
     with open('/Users/troy/APFM-dev/transcribe/gcp_speech2text/disclosure_phrases.csv', 'r') as f:
         reader = csv.reader(f)
         disclosure_phrase_list = list(reader)
 
+    # to confirm
     print(disclosure_phrase_list)
-
     # [['This is the first line', 'Line1'],
     #  ['This is the second line', 'Line2'],
     #  ['This is the third line', 'Line3']]
 
-    boost = 20.0
-    speech_contexts_element = {"phrases": phrases, "boost": boost}
+    boost = 20.0  # how much to boost by
+    speech_contexts_element = {"phrases": phrases,
+                               "boost": boost}  # boost in a dictionary
     speech_contexts = [speech_contexts_element]
 
     audio = types.RecognitionAudio(uri=gcs_uri)
 
+    # Form 1
     config = {
         "encoding": enums.RecognitionConfig.AudioEncoding.LINEAR16,
         "sample_rate_hertz": 8000,
         "language_code": 'en-US',
         "enable_word_time_offsets": True,
         "speech_contexts": speech_contexts,
-        "model": 'phone_call'
+        "model": phone_call,
     }
 
+    # Alt form
     # config = types.RecognitionConfig(
     #     encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
     #     sample_rate_hertz=8000,
@@ -157,7 +160,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
     print('Waiting for operation to complete...')
     result = operation.result(timeout=90)
 
-    # get only LID from gci
+    # String manipulate for only the LID & CID from gci
     LID = gcs_uri[14:37]
     print(LID)
 
@@ -205,10 +208,12 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
             start_time = word_info.start_time
             end_time = word_info.end_time
 
-            timeLog_file.write('Word: {}, start_time: {},end_time: {} \n'.format(
-                word,
-                start_time.seconds + start_time.nanos * 1e-9,
-                end_time.seconds + end_time.nanos * 1e-9))
+            timeLog_file.write('Word: {}, start_time: {},end_time: {} \n'.
+                               format(
+                                   word,
+                                   start_time.seconds +
+                                   start_time.nanos * 1e-9,
+                                   end_time.seconds + end_time.nanos * 1e-9))
 
             print('Word: {}, start_time: {}, end_time: {}'.format(
                 word,
