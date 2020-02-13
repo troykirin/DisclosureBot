@@ -152,13 +152,24 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
     print('Waiting for operation to complete...')
     result = operation.result(timeout=90)
 
+    # get only LID from gci
+    LID = gcs_uri[14:37]
+    print(LID)
+
+    path = "./gcp_speech2text/02-12/"
+
     # Print to Files
-    transcript_file = open("transcript.txt", "w")
+    transcript_file_name = path+LID + "_transcript.txt"
+    print(transcript_file_name)
+    transcript_file = open(transcript_file_name, "x")  # create file
+    transcript_file = open(transcript_file_name, "w")  # write to file
     transcript_file.write("Below is transcript: for {}\n".format(gcs_uri))
 
-    time_log_file = open("time_log.txt", "w")
+    time_log_file_name = path+LID + "_time_log.txt"
+    time_log_file = open(time_log_file_name, "x")
+    time_log_file = open(time_log_file_name, "w")
     time_log_file.write("Below is Time Logs: \n")
-    time_log_file = open("time_log.txt", "a")
+    time_log_file = open(time_log_file_name, "a")
 
     for result in result.results:
         alternative = result.alternatives[0]
