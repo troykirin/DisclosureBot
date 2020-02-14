@@ -144,6 +144,9 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
                                "boost": boost}  # boost in a dictionary
     speech_contexts = [speech_contexts_element]
 
+    enable_speaker_diarization = True
+    diarization_speaker_count = 2
+
     audio = types.RecognitionAudio(uri=gcs_uri)
 
     # Form 1
@@ -154,6 +157,8 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
         "enable_word_time_offsets": True,
         "speech_contexts": speech_contexts,
         "model": "phone_call",
+        "enable_speaker_diarization": enable_speaker_diarization,        "diarization_speaker_count": diarization_speaker_count,
+
     }
 
     # Alt form
@@ -202,6 +207,16 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
     timeLog_file.write("Below is Time Logs: \n")
     timeLog_file = open(timeLog_filename, "a")
 
+    # -- SPEAKER FILE --
+    speaker_filename = pathDir+LID+"_speakers.txt"
+    os.makedirs(os.path.dirname(speaker_filename), exist_ok=True)
+    with open(timeLog_filename, "a") as f:
+        f.write("Below is time_logs: for {}\n".format(gcs_uri))
+
+    speaker_file = open(speaker_filename, "w")
+    speaker_file.write("Below is Transcript with Speaker tags: \n")
+    speaker_file = open(speaker_filename, "a")
+
     for result in result.results:
         alternative = result.alternatives[0]
 
@@ -212,6 +227,12 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
         print('Confidence: {} \n'.format(alternative.confidence))
         transcript_file.write(
             'Confidence Score: {} \n'.format(alternative.confidence))
+
+        for word in alternative.words:
+            print(u"Word: {}".format(word.word))
+            speaker_file.write(u"Word: {}\n".format(word.word))
+            print(u"Speaker tag: {}".format(word.speaker_tag))
+            speaker_file.write(u"Speaker tag: {}\n".format(word.speaker_tag))
 
         for word_info in alternative.words:
             word = word_info.word
@@ -232,6 +253,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
 
     transcript_file.close()
     timeLog_file.close()
+    speaker_file.close()
 
     # [END def_transcribe_gcs]
 
