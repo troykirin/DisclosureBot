@@ -23,7 +23,7 @@ Example usage:
     python transcribe_word_time_offsets.py -s <language> resources/audio.raw
     python transcribe_word_time_offsets.py -s <language> \gs://cloud-samples-tests/speech/vr.flac
 """
-
+# %%
 import argparse
 import io
 import csv
@@ -124,6 +124,15 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
         reader = csv.reader(f)
         disclosure_phrase_list = list(reader)
 
+    # flatten_list
+    flat_list = [
+        item for sublist in disclosure_phrase_list for item in sublist]
+
+    # Check flattened list
+    # print(flat_list)
+
+    disclosure_phrase_list = flat_list
+
     # to confirm
     print(disclosure_phrase_list)
     # [['This is the first line', 'Line1'],
@@ -144,7 +153,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
         "language_code": 'en-US',
         "enable_word_time_offsets": True,
         "speech_contexts": speech_contexts,
-        "model": phone_call,
+        "model": "phone_call",
     }
 
     # Alt form
@@ -161,7 +170,8 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
     result = operation.result(timeout=90)
 
     # String manipulate for only the LID & CID from gci
-    LID = gcs_uri[14:37]
+    # LID = gcs_uri[14:37]
+    LID = gcs_uri[14:-4]
     print(LID)
 
     pathDir = "/Users/troy/APFM-dev/transcribe/gcp_speech2text/02-13/"
@@ -226,6 +236,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
     # [END def_transcribe_gcs]
 
 
+# %%
 if __name__ == '__main__':
     # parser = argparse.ArgumentParser(description=__doc__,
     #                                  formatter_class=argparse.RawDescriptionHelpFormatter)
