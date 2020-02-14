@@ -180,7 +180,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
     LID = gcs_uri[14:-4]
     print(LID)
 
-    pathDir = "/Users/troy/APFM-dev/transcribe/gcp_speech2text/02-13/"
+    pathDir = "/Users/troy/APFM-dev/transcribe/gcp_speech2text/02-14/"
 
     transcript_filename = pathDir + LID + "_transcript.txt"
     os.makedirs(os.path.dirname(transcript_filename), exist_ok=True)
