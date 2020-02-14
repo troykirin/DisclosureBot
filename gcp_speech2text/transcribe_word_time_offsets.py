@@ -157,7 +157,8 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
         "enable_word_time_offsets": True,
         "speech_contexts": speech_contexts,
         "model": "phone_call",
-        "enable_speaker_diarization": enable_speaker_diarization,        "diarization_speaker_count": diarization_speaker_count,
+        "enable_speaker_diarization": enable_speaker_diarization,
+        "diarization_speaker_count": diarization_speaker_count,
 
     }
 
@@ -181,7 +182,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
 
     pathDir = "/Users/troy/APFM-dev/transcribe/gcp_speech2text/02-13/"
 
-    transcript_filename = pathDir+LID+"_transcript.txt"
+    transcript_filename = pathDir + LID + "_transcript.txt"
     os.makedirs(os.path.dirname(transcript_filename), exist_ok=True)
 
     with open(transcript_filename, "w") as f:
@@ -195,7 +196,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
     transcript_file = open(transcript_filename, "w")  # write to file
     transcript_file.write("Below is transcript: for {}\n".format(gcs_uri))
 
-    timeLog_filename = pathDir+LID+"_timeLogs.txt"
+    timeLog_filename = pathDir + LID + "_timeLogs.txt"
     os.makedirs(os.path.dirname(timeLog_filename), exist_ok=True)
 
     with open(timeLog_filename, "a") as f:
@@ -208,7 +209,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
     timeLog_file = open(timeLog_filename, "a")
 
     # -- SPEAKER FILE --
-    speaker_filename = pathDir+LID+"_speakers.txt"
+    speaker_filename = pathDir + LID + "_speakers.txt"
     os.makedirs(os.path.dirname(speaker_filename), exist_ok=True)
     with open(timeLog_filename, "a") as f:
         f.write("Below is time_logs: for {}\n".format(gcs_uri))
