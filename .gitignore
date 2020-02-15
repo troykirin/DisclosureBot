@@ -8,3 +8,4 @@ gcp_speech2text/02-13/*
 gcp_speech2text/02-14/*
 text_to_trim.txt
 clean_text.txt
+gcp_speech2text/rubric_names.txt
