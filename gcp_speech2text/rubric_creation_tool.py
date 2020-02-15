@@ -5,9 +5,11 @@ import io
 import os
 import csv
 import shutil
+import argparse
+import errno
 
 # %%
-path_transcribe = os.getcwd()
+path_transcribe = os.getcwd()  # dir holding script + filelist
 print(path_transcribe)
 
 # %%
@@ -55,3 +57,6 @@ for element in fileList:
     shutil.copy('_Template_Colorado Call Disclosure Rubric.xlsx', filename)
 
     # %%
+
+# %% Next step, turn into a runnable script
+# if __name__ == '__main__':
