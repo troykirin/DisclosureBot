@@ -71,7 +71,7 @@ def transcribe_file_with_word_time_offsets(speech_file, language='en-US'):
         encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
         language_code=language,
         enable_word_time_offsets=True,
-        model=phone_call)
+    )
 
     print("Recognizing:")
     response = client.recognize(config, audio)
