@@ -149,6 +149,37 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
 
     audio = types.RecognitionAudio(uri=gcs_uri)
 
+    # --- MY Unique Solution to Improve Accuracy of Transcriptions ---
+    # create a dataframe
+    # have a matrix of SLA to their corresponding phrases (essentially a dictionary of k,v pairs)
+    # maybe a scenario of frequent itemset mining where if A shows up then what's the probability of B showing up
+    # the A being "great, thank you" could boost probability of that being the start of next phrases too
+
+    # The dataframe would also have a very high boost for the name of lead from database
+    # read in the csv of lead helping, there is a very high probability name will show up in first sentance, essentially first 5-6 seconds.
+
+    # dataframe should also have feature to have stopword list. -- words that should be ignored in this scenario.
+    # something like "bye" kept showing up which is supposed to obviously be "by" in the conext we are using this solution for
+
+    # the chatbot thought
+    # if we think about it, essentially the conversation is a simple decison tree.
+    # if this then this.
+    # when first phrase matches expected output then end / catagorize as speaker 1.
+    # then start speaker 2, listen for affirmative yes.
+    # we can define a list of phrases that correspond to an affirmative yes.
+    # ex. yes,sure,mhmm,okay,that's fine. --- there already exists corpus of this nature.
+    # the vision
+    # if we use a bot to listen to the disclosure call when the SLA click a button. It will initiate a streaming transcription. When this happens there will need to be a live confirmation that happens DURING the call and not POST.
+    # this is a solution that provides the following
+    # 1. real-time conversation intelligence
+    # 2. reduce overhead of communication of QA disclosure grading, sending email to RM, RM reaching out to SLA, SLA needing to work on getting a hold of lead.
+    # 3. Reduce the lead lost rate, if they are not willing to continue working with APFM after first attempt.
+    # Question: What is the cost of having to fail a disclosure and getting 2nd disclosure?
+    # Where can you find data to support this hypothesis
+    # What kind of effective presentation would prove this solution as something to provide value to both the company and clients?
+
+    # --- END ---
+
     # Form 1
     config = {
         "encoding": enums.RecognitionConfig.AudioEncoding.LINEAR16,
