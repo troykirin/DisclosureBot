@@ -1,0 +1,661 @@
+Below is Transcript with Speaker tags: 
+Word: can
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: please
+Speaker tag: 0
+Word: confirm
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: are
+Speaker tag: 0
+Word: Dean
+Speaker tag: 0
+Word: weens
+Speaker tag: 0
+Word: yes
+Speaker tag: 0
+Word: Miss
+Speaker tag: 0
+Word: Williams
+Speaker tag: 0
+Word: with
+Speaker tag: 0
+Word: an
+Speaker tag: 0
+Word: app
+Speaker tag: 0
+Word: correct
+Speaker tag: 0
+Word: WWE
+Speaker tag: 0
+Word: M
+Speaker tag: 0
+Word: as
+Speaker tag: 0
+Word: in
+Speaker tag: 0
+Word: Mary
+Speaker tag: 0
+Word: s
+Speaker tag: 0
+Word: t
+Speaker tag: 0
+Word: s
+Speaker tag: 0
+Word: thank
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: alright
+Speaker tag: 0
+Word: thanks
+Speaker tag: 0
+Word: for
+Speaker tag: 0
+Word: doing
+Speaker tag: 0
+Word: that
+Speaker tag: 0
+Word: in
+Speaker tag: 0
+Word: addition
+Speaker tag: 0
+Word: to
+Speaker tag: 0
+Word: confirming
+Speaker tag: 0
+Word: your
+Speaker tag: 0
+Word: name
+Speaker tag: 0
+Word: I
+Speaker tag: 0
+Word: need
+Speaker tag: 0
+Word: a
+Speaker tag: 0
+Word: record
+Speaker tag: 0
+Word: that
+Speaker tag: 0
+Word: I
+Speaker tag: 0
+Word: provided
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: with
+Speaker tag: 0
+Word: these
+Speaker tag: 0
+Word: disclosures
+Speaker tag: 0
+Word: and
+Speaker tag: 0
+Word: I
+Speaker tag: 0
+Word: also
+Speaker tag: 0
+Word: need
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: to
+Speaker tag: 0
+Word: sign
+Speaker tag: 0
+Word: it
+Speaker tag: 0
+Word: but
+Speaker tag: 0
+Word: to
+Speaker tag: 0
+Word: make
+Speaker tag: 0
+Word: things
+Speaker tag: 0
+Word: easier
+Speaker tag: 0
+Word: for
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: instead
+Speaker tag: 0
+Word: of
+Speaker tag: 0
+Word: having
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: to
+Speaker tag: 0
+Word: physically
+Speaker tag: 0
+Word: sign
+Speaker tag: 0
+Word: something
+Speaker tag: 0
+Word: we
+Speaker tag: 0
+Word: can
+Speaker tag: 0
+Word: have
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: sign
+Speaker tag: 0
+Word: over
+Speaker tag: 0
+Word: the
+Speaker tag: 0
+Word: phone
+Speaker tag: 0
+Word: now
+Speaker tag: 0
+Word: bye
+Speaker tag: 0
+Word: recording
+Speaker tag: 0
+Word: this
+Speaker tag: 0
+Word: conversation
+Speaker tag: 0
+Word: is
+Speaker tag: 0
+Word: that
+Speaker tag: 0
+Word: alright
+Speaker tag: 0
+Word: perfect
+Speaker tag: 0
+Word: thanks
+Speaker tag: 0
+Word: so
+Speaker tag: 0
+Word: much
+Speaker tag: 0
+Word: just
+Speaker tag: 0
+Word: to
+Speaker tag: 0
+Word: let
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: know
+Speaker tag: 0
+Word: our
+Speaker tag: 0
+Word: service
+Speaker tag: 0
+Word: is
+Speaker tag: 0
+Word: free
+Speaker tag: 0
+Word: to
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: because
+Speaker tag: 0
+Word: we
+Speaker tag: 0
+Word: are
+Speaker tag: 0
+Word: paid
+Speaker tag: 0
+Word: a
+Speaker tag: 0
+Word: referral
+Speaker tag: 0
+Word: fee
+Speaker tag: 0
+Word: by
+Speaker tag: 0
+Word: our
+Speaker tag: 0
+Word: partner
+Speaker tag: 0
+Word: communities
+Speaker tag: 0
+Word: only
+Speaker tag: 0
+Word: if
+Speaker tag: 0
+Word: we
+Speaker tag: 0
+Word: help
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: find
+Speaker tag: 0
+Word: a
+Speaker tag: 0
+Word: good
+Speaker tag: 0
+Word: fit
+Speaker tag: 0
+Word: and
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: decide
+Speaker tag: 0
+Word: to
+Speaker tag: 0
+Word: move
+Speaker tag: 0
+Word: in
+Speaker tag: 0
+Word: the
+Speaker tag: 0
+Word: seed
+Speaker tag: 0
+Word: ranges
+Speaker tag: 0
+Word: from
+Speaker tag: 0
+Word: 78%
+Speaker tag: 0
+Word: to
+Speaker tag: 0
+Word: 120%
+Speaker tag: 0
+Word: of
+Speaker tag: 0
+Word: the
+Speaker tag: 0
+Word: first
+Speaker tag: 0
+Word: month's
+Speaker tag: 0
+Word: rent
+Speaker tag: 0
+Word: depending
+Speaker tag: 0
+Word: upon
+Speaker tag: 0
+Word: agreement
+Speaker tag: 0
+Word: but
+Speaker tag: 0
+Word: no
+Speaker tag: 0
+Word: one
+Speaker tag: 0
+Word: can
+Speaker tag: 0
+Word: ever
+Speaker tag: 0
+Word: charge
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: more
+Speaker tag: 0
+Word: because
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: use
+Speaker tag: 0
+Word: our
+Speaker tag: 0
+Word: services
+Speaker tag: 0
+Word: do
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: understand
+Speaker tag: 0
+Word: that
+Speaker tag: 0
+Word: our
+Speaker tag: 0
+Word: services
+Speaker tag: 0
+Word: are
+Speaker tag: 0
+Word: free
+Speaker tag: 0
+Word: to
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: can
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: please
+Speaker tag: 1
+Word: confirm
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: are
+Speaker tag: 1
+Word: Dean
+Speaker tag: 1
+Word: weens
+Speaker tag: 2
+Word: yes
+Speaker tag: 2
+Word: Miss
+Speaker tag: 2
+Word: Williams
+Speaker tag: 2
+Word: with
+Speaker tag: 2
+Word: an
+Speaker tag: 2
+Word: app
+Speaker tag: 2
+Word: correct
+Speaker tag: 2
+Word: WWE
+Speaker tag: 2
+Word: M
+Speaker tag: 2
+Word: as
+Speaker tag: 2
+Word: in
+Speaker tag: 2
+Word: Mary
+Speaker tag: 2
+Word: s
+Speaker tag: 2
+Word: t
+Speaker tag: 2
+Word: s
+Speaker tag: 2
+Word: thank
+Speaker tag: 2
+Word: you
+Speaker tag: 2
+Word: alright
+Speaker tag: 2
+Word: thanks
+Speaker tag: 1
+Word: for
+Speaker tag: 1
+Word: doing
+Speaker tag: 1
+Word: that
+Speaker tag: 1
+Word: in
+Speaker tag: 1
+Word: addition
+Speaker tag: 1
+Word: to
+Speaker tag: 1
+Word: confirming
+Speaker tag: 1
+Word: your
+Speaker tag: 1
+Word: name
+Speaker tag: 1
+Word: I
+Speaker tag: 1
+Word: need
+Speaker tag: 1
+Word: a
+Speaker tag: 1
+Word: record
+Speaker tag: 1
+Word: that
+Speaker tag: 1
+Word: I
+Speaker tag: 1
+Word: provided
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: with
+Speaker tag: 1
+Word: these
+Speaker tag: 1
+Word: disclosures
+Speaker tag: 1
+Word: and
+Speaker tag: 1
+Word: I
+Speaker tag: 1
+Word: also
+Speaker tag: 1
+Word: need
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: to
+Speaker tag: 1
+Word: sign
+Speaker tag: 1
+Word: it
+Speaker tag: 1
+Word: but
+Speaker tag: 1
+Word: to
+Speaker tag: 1
+Word: make
+Speaker tag: 1
+Word: things
+Speaker tag: 1
+Word: easier
+Speaker tag: 1
+Word: for
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: instead
+Speaker tag: 1
+Word: of
+Speaker tag: 1
+Word: having
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: to
+Speaker tag: 1
+Word: physically
+Speaker tag: 1
+Word: sign
+Speaker tag: 1
+Word: something
+Speaker tag: 1
+Word: we
+Speaker tag: 1
+Word: can
+Speaker tag: 1
+Word: have
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: sign
+Speaker tag: 1
+Word: over
+Speaker tag: 1
+Word: the
+Speaker tag: 1
+Word: phone
+Speaker tag: 1
+Word: now
+Speaker tag: 1
+Word: bye
+Speaker tag: 1
+Word: recording
+Speaker tag: 1
+Word: this
+Speaker tag: 1
+Word: conversation
+Speaker tag: 1
+Word: is
+Speaker tag: 1
+Word: that
+Speaker tag: 1
+Word: alright
+Speaker tag: 1
+Word: perfect
+Speaker tag: 1
+Word: thanks
+Speaker tag: 1
+Word: so
+Speaker tag: 1
+Word: much
+Speaker tag: 1
+Word: just
+Speaker tag: 1
+Word: to
+Speaker tag: 1
+Word: let
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: know
+Speaker tag: 1
+Word: our
+Speaker tag: 1
+Word: service
+Speaker tag: 1
+Word: is
+Speaker tag: 1
+Word: free
+Speaker tag: 1
+Word: to
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: because
+Speaker tag: 1
+Word: we
+Speaker tag: 1
+Word: are
+Speaker tag: 1
+Word: paid
+Speaker tag: 1
+Word: a
+Speaker tag: 1
+Word: referral
+Speaker tag: 1
+Word: fee
+Speaker tag: 1
+Word: by
+Speaker tag: 1
+Word: our
+Speaker tag: 1
+Word: partner
+Speaker tag: 1
+Word: communities
+Speaker tag: 1
+Word: only
+Speaker tag: 1
+Word: if
+Speaker tag: 1
+Word: we
+Speaker tag: 1
+Word: help
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: find
+Speaker tag: 1
+Word: a
+Speaker tag: 1
+Word: good
+Speaker tag: 1
+Word: fit
+Speaker tag: 1
+Word: and
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: decide
+Speaker tag: 1
+Word: to
+Speaker tag: 1
+Word: move
+Speaker tag: 1
+Word: in
+Speaker tag: 1
+Word: the
+Speaker tag: 1
+Word: seed
+Speaker tag: 1
+Word: ranges
+Speaker tag: 1
+Word: from
+Speaker tag: 1
+Word: 78%
+Speaker tag: 1
+Word: to
+Speaker tag: 1
+Word: 120%
+Speaker tag: 1
+Word: of
+Speaker tag: 1
+Word: the
+Speaker tag: 1
+Word: first
+Speaker tag: 1
+Word: month's
+Speaker tag: 1
+Word: rent
+Speaker tag: 1
+Word: depending
+Speaker tag: 1
+Word: upon
+Speaker tag: 1
+Word: agreement
+Speaker tag: 1
+Word: but
+Speaker tag: 1
+Word: no
+Speaker tag: 1
+Word: one
+Speaker tag: 1
+Word: can
+Speaker tag: 1
+Word: ever
+Speaker tag: 1
+Word: charge
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: more
+Speaker tag: 1
+Word: because
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: use
+Speaker tag: 1
+Word: our
+Speaker tag: 1
+Word: services
+Speaker tag: 1
+Word: do
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: understand
+Speaker tag: 1
+Word: that
+Speaker tag: 1
+Word: our
+Speaker tag: 1
+Word: services
+Speaker tag: 1
+Word: are
+Speaker tag: 1
+Word: free
+Speaker tag: 1
+Word: to
+Speaker tag: 1
+Word: you
+Speaker tag: 2

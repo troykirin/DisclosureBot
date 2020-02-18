@@ -1,0 +1,8 @@
+gs://apfm-dev/LID19657455_CID86153599_June_Robinson_20200213.wav
+gs://apfm-dev/LID19657504_CID86154976_John_Toteve_20200213.wav
+gs://apfm-dev/LID19657601_CID86157034_Zeljka_Buckner_20200213.wav
+gs://apfm-dev/LID19657666_CID86158241_Louis_Goodman_20200213.wav
+gs://apfm-dev/LID19657761_CID86161236_Danette_Kozak_20200213.wav
+gs://apfm-dev/LID19658136_CID86171333_Jannie_Irvin_20200213.wav
+gs://apfm-dev/LID19658191_CID86172765_Rollie_Colby_20200213.wav
+gs://apfm-dev/LID19658612_CID86182453_Bernice_Weeems_20200213.wav

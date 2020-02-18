@@ -225,7 +225,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
     # transcript_file = open(transcript_file_name, "x")  # create file
     # transcript_file = open(transcript_file_name, "w")  # write to file
     transcript_file = open(transcript_filename, "w")  # write to file
-    transcript_file.write("Below is transcript: for {}\n".format(gcs_uri))
+    # transcript_file.write("Below is transcript: for {}\n".format(gcs_uri))
 
     timeLog_filename = pathDir + LID + "_timeLogs.txt"
     os.makedirs(os.path.dirname(timeLog_filename), exist_ok=True)
@@ -254,11 +254,11 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
 
         print('Transcript: {} \n'.format(alternative.transcript))
         transcript_file.write(
-            'Transcript: {} \n'.format(alternative.transcript))
+            f"{alternative.transcript} \n")
 
         print('Confidence: {} \n'.format(alternative.confidence))
-        transcript_file.write(
-            'Confidence Score: {} \n'.format(alternative.confidence))
+        # transcript_file.write(
+        # 'Confidence Score: {} \n'.format(alternative.confidence))
 
         for word in alternative.words:
             print(u"Word: {}".format(word.word))
@@ -308,3 +308,9 @@ if __name__ == '__main__':
 # %%
 
 # TODO Next step: create a dir with gs created
+
+
+# %%
+
+
+# %%
