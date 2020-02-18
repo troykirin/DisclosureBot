@@ -1,12 +1,4 @@
 .vscode
 .DS_Store
-python-speech-recognition
-gcp_speech2text/time_log.txt
-gcp_speech2text/transcript.txt
-gcp_speech2text/02-11/*
-gcp_speech2text/02-13/*
-gcp_speech2text/02-14/*
-text_to_trim.txt
-clean_text.txt
-gcp_speech2text/rubric_names.txt
 api-key.json
+other/*
