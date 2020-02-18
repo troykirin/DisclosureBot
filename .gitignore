@@ -1,6 +1,5 @@
-.vscode/
-.DS_Store/
-api-key.json
+.vscode
+.DS_Store
+*/api-key.json
 other/*
 gcp_speech2text/api-key.json
-.DS_Store
