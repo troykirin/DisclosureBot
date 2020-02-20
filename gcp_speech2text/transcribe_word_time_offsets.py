@@ -34,6 +34,10 @@ import errno
 from google.oauth2 import service_account
 
 
+# Class variables
+uri_list = ['test']
+
+
 credentials = service_account.Credentials.from_service_account_file(
     '/Users/troy/APFM-dev/gcp-transcribe-api-key.json')
 
@@ -91,7 +95,21 @@ def transcribe_file_with_word_time_offsets(speech_file, language='en-US'):
                 end_time.seconds + end_time.nanos * 1e-9))
 
 
+def getCloudFiles(txtFileOf_gcsURI="./URI_list.csv", inList=uri_list):
+    print(inList)
+
+    inList.append("helloWorld")
+
+    print(inList)
+    pass
+
+
+def func2(inList=uri_list):
+    print(inList)
+    pass
 # [START def_transcribe_gcs]
+
+
 def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-US'):
     """Transcribe the given audio file asynchronously and output the word time offsets."""
 
@@ -211,7 +229,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
     LID = gcs_uri[14:-4]
     print(LID)
 
-    pathDir = "/Users/troy/APFM-dev/transcribe/gcp_speech2text/02-14/"
+    pathDir = "/Users/troy/APFM-dev/transcribe/gcp_speech2text/02-20/"
 
     transcript_filename = pathDir + LID + "_transcript.txt"
     os.makedirs(os.path.dirname(transcript_filename), exist_ok=True)
@@ -302,7 +320,10 @@ if __name__ == '__main__':
     #     transcribe_gcs_with_word_time_offsets(args.path, args.string)
     # else:
     #     transcribe_file_with_word_time_offsets(args.path, args.string)
-    transcribe_gcs_with_word_time_offsets()
+
+    getCloudFiles()
+    func2()
+    # transcribe_gcs_with_word_time_offsets()
 
 
 # %%
