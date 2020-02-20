@@ -34,65 +34,20 @@ import errno
 from google.oauth2 import service_account
 
 
-# Class variables
-uri_list = ['test']
+# Class variable
+uri_list = []
 
+# Read in csv list
+with open('/Users/troy/APFM-dev/transcribe/gcp_speech2text/gcp_transcribe_list.csv', 'r') as infile:
+    reader = csv.reader(infile)
+    uri_list = list(reader)
 
+# test
+print(uri_list)
+
+# Credentials for google cloud account
 credentials = service_account.Credentials.from_service_account_file(
     '/Users/troy/APFM-dev/gcp-transcribe-api-key.json')
-
-
-def transcribe_file_with_word_time_offsets(speech_file, language='en-US'):
-    """Transcribe the given audio file synchronously and output the word time
-    offsets."""
-    print("Start")
-
-    # - STABLE BUILD -
-    # from google.cloud import speech
-    # from google.cloud.speech import enums
-    # from google.cloud.speech import types
-
-    # - BETA Build -
-    from google.cloud import speech_v1p1beta1
-    from google.cloud.speech_v1p1beta1 import enums
-    from google.cloud.speech import types
-
-    print("checking credentials")
-
-    # client = speech.SpeechClient(credentials=credentials) # Stable
-    client = speech_v1p1beta1.SpeechClient(credentials=credentials)  # BETA
-
-    print("Checked")
-    with io.open(speech_file, 'rb') as audio_file:
-        content = audio_file.read()
-
-    print("audio file read")
-
-    audio = types.RecognitionAudio(content=content)
-
-    print("config start")
-    config = types.RecognitionConfig(
-        encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
-        language_code=language,
-        enable_word_time_offsets=True,
-    )
-
-    print("Recognizing:")
-    response = client.recognize(config, audio)
-    print("Recognized")
-
-    for result in response.results:
-        alternative = result.alternatives[0]
-        print('Transcript: {}'.format(alternative.transcript))
-
-        for word_info in alternative.words:
-            word = word_info.word
-            start_time = word_info.start_time
-            end_time = word_info.end_time
-            print('Word: {}, start_time: {}, end_time: {}'.format(
-                word,
-                start_time.seconds + start_time.nanos * 1e-9,
-                end_time.seconds + end_time.nanos * 1e-9))
 
 
 def getCloudFiles(txtFileOf_gcsURI="./URI_list.csv", inList=uri_list):
