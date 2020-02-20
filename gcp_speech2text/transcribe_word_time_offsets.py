@@ -37,25 +37,31 @@ from google.oauth2 import service_account
 # Class variable
 uri_list = []
 
-# Read in csv list
-with open('/Users/troy/APFM-dev/transcribe/gcp_speech2text/gcp_transcribe_list.csv', 'r') as infile:
-    reader = csv.reader(infile)
-    uri_list = list(reader)
-
-# test
-print(uri_list)
-
 # Credentials for google cloud account
 credentials = service_account.Credentials.from_service_account_file(
     '/Users/troy/APFM-dev/gcp-transcribe-api-key.json')
 
 
 def getCloudFiles(txtFileOf_gcsURI="./URI_list.csv", inList=uri_list):
-    print(inList)
 
-    inList.append("helloWorld")
+    # Read in csv list
+    with open('/Users/troy/APFM-dev/transcribe/gcp_speech2text/gcp_transcribe_list.csv', 'r') as infile:
+        reader = csv.reader(infile)
+        uri_list = list(reader)
 
-    print(inList)
+    # Flatten list
+    flat_list = [
+        item for sublist in uri_list for item in sublist]
+
+    # test 1
+    uri_list = flat_list
+    print(f"Test 1 {uri_list} \n")
+
+    # test 2
+    print("Test 2: \n")
+    for i in uri_list:
+        print(f"{i}")
+    print("\n")
     pass
 
 
@@ -277,7 +283,7 @@ if __name__ == '__main__':
     #     transcribe_file_with_word_time_offsets(args.path, args.string)
 
     getCloudFiles()
-    func2()
+    # func2()
     # transcribe_gcs_with_word_time_offsets()
 
 
