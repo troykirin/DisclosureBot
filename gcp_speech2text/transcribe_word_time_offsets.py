@@ -35,14 +35,16 @@ from google.oauth2 import service_account
 
 
 # Class variable
-uri_list = []
+uri_list = ['yee']
 
 # Credentials for google cloud account
 credentials = service_account.Credentials.from_service_account_file(
     '/Users/troy/APFM-dev/gcp-transcribe-api-key.json')
 
 
-def getCloudFiles(txtFileOf_gcsURI="./URI_list.csv", inList=uri_list):
+def getCloudFiles():
+
+    global uri_list
 
     # Read in csv list
     with open('/Users/troy/APFM-dev/transcribe/gcp_speech2text/gcp_transcribe_list.csv', 'r') as infile:
@@ -65,13 +67,33 @@ def getCloudFiles(txtFileOf_gcsURI="./URI_list.csv", inList=uri_list):
     pass
 
 
-def func2(inList=uri_list):
-    print(inList)
+def test_func():
+    print("Running test function... \n")
+    global uri_list
+    print(uri_list)
+
+    uri_list.append("haw")
     pass
 # [START def_transcribe_gcs]
 
 
-def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-US'):
+def runTheCloud():
+    # take uri list - chk
+
+    global uri_list
+
+    print("starting to run the cloud.... \n")
+
+    # pass into transcription function
+    for item in uri_list:
+        transcribe_gcs_with_word_time_offsets(gcs_uri=item, language='en-US')
+        print(f"Just ran {item}")
+
+    # itereate until consume entire uri list
+    pass
+
+
+def transcribe_gcs_with_word_time_offsets(gcs_uri, language):
     """Transcribe the given audio file asynchronously and output the word time offsets."""
 
     # - STABLE BUILD -
@@ -85,13 +107,17 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri="gcs://generic", language='en-
     from google.cloud.speech_v1p1beta1 import enums
     from google.cloud.speech_v1p1beta1 import types
 
-    # Default language to use
-    language = 'en-US'
+    # -- MAY NEED TO REMOVE ---
+    # # Default language to use
+    # language = 'en-US'
 
-    # Ask user for gcs_uri
-    gcs_uri = input("Please enter gcs_uri: ")
-    # Print to confirm
-    print("You just entered: ", gcs_uri)
+    # # Ask user for gcs_uri
+    # gcs_uri = input("Please enter gcs_uri: ")
+
+    # # Print to confirm
+    # print("You just entered: ", gcs_uri)
+
+    # ___ END ___ OF MAY ^^^^
 
     # client = speech.SpeechClient()  # STABLE
     client = speech_v1p1beta1.SpeechClient(credentials=credentials)  # BETA
@@ -283,7 +309,9 @@ if __name__ == '__main__':
     #     transcribe_file_with_word_time_offsets(args.path, args.string)
 
     getCloudFiles()
-    # func2()
+    runTheCloud()
+    # test_func()
+
     # transcribe_gcs_with_word_time_offsets()
 
 
