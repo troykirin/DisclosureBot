@@ -13,10 +13,10 @@ Date = '4'
 def getInfo():
     global LID, CID, ResName, Date
 
-    LID = input()
-    CID = input()
-    ResName = input()
-    Date = input()
+    LID = input("Lead ID: ")
+    CID = input("Call ID: ")
+    ResName = input("Resident Name: ")
+    Date = input("Date: ")
     pass
 
 
@@ -29,7 +29,18 @@ def test():
 def createFileName():
     global LID, CID, ResName, Date
 
+    # LID testing
+    # -- input must be proper digits --
+
+    # CID testing
+    # --- input must be proper format
+
+    # Date formatting
     Date = Date.replace('/', '')
+
+    # Resident name formatting
+    ResName = ResName.replace(' ', '_')  # spaces become _
+
     filename = print(
         "LID{}_CID{}_{}_{}".format(LID, CID, ResName, Date))
 
