@@ -47,7 +47,7 @@ def getCloudFiles():
     global uri_list
 
     # Read in csv list
-    with open('/Users/troy/APFM-dev/transcribe/gcp_speech2text/gcp_transcribe_list.csv', 'r') as infile:
+    with open('/Users/troy/APFM-dev/disclosure_tools/gcp_speech2text/gcp_transcribe_list.csv', 'r') as infile:
         reader = csv.reader(infile)
         uri_list = list(reader)
 
@@ -125,7 +125,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri, language):
     # list of phrases to use in boost
     phrases = []
 
-    with open('/Users/troy/APFM-dev/transcribe/gcp_speech2text/disclosure_phrases.csv', 'r') as f:
+    with open('/Users/troy/APFM-dev/disclosure_tools/gcp_speech2text/disclosure_phrases.csv', 'r') as f:
         reader = csv.reader(f)
         disclosure_phrase_list = list(reader)
 
@@ -216,7 +216,7 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri, language):
     LID = gcs_uri[14:-4]
     print(LID)
 
-    pathDir = "/Users/troy/APFM-dev/transcribe/gcp_speech2text/transcriptions/02-20/"
+    pathDir = "/Users/troy/APFM-dev/disclosure_tools/gcp_speech2text/transcriptions/02-21/"
 
     transcript_filename = pathDir + LID + "_transcript.txt"
     os.makedirs(os.path.dirname(transcript_filename), exist_ok=True)
