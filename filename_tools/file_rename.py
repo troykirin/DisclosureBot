@@ -42,3 +42,14 @@
 # then do the rename based on master sheet.
 
 # --- DONE ---
+
+
+# %%
+list_CID = ['']
+list_filenames = ['']
+
+list_filenames_splice = ['']
+
+for i in range(list_CID):
+    if list_filenames_splice[i] == list_CID[i]:
+        print("Match found")
