@@ -1,0 +1,5 @@
+#!/bin/bash
+
+gsutil cp "/Users/troy/APFM/ROOT_CO/Snippets/*wav" "gs://apfm-dev"
+
+echo "Upload script ran..."

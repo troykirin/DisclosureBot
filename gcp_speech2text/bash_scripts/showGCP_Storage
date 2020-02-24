@@ -1,0 +1,5 @@
+#!/bin/bash
+
+gsutil ls gs://apfm-dev
+
+echo "Showing contents in gs://apfm-dev"
