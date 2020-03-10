@@ -73,15 +73,15 @@ for filename in os.listdir("/Users/troy/Downloads"):
     pass
 
 # Apend filename of five9 calls
-five9_calls = []
+FIVE9_CALLS = []
 
 # If file is .wav type then append filename onto list
 for file in files_list:
     if file.find(".wav") is not -1:
-        five9_calls.append(file)
+        FIVE9_CALLS.append(file)
 
 # Validation
-print(f"Check all wav stored...\n {five9_calls}")
+print(f"Check all wav stored...\n {FIVE9_CALLS}")
 
 
 # %% Slice Dataframe to CID + Filename
@@ -105,12 +105,26 @@ df_rename = df_rename.dropna(axis=0)
 
 # %% Rename file step
 
-# Exactly what I want
-df_rename.values.tolist()
+# Convert dataframe into a list of lists
+RENAME_REF_LIST = df_rename.values.tolist()
 
+# # Test
+# # Get first CID from RENAME_REF_LIST
+# print(RENAME_REF_LIST[0][0])
+# # Get frist File Name from RENAME_REF_LIST
+# print(RENAME_REF_LIST[0][1])
 
-# Iterate df_rename by index
+# If five9 list contains cid from rename rereferralist
+# then rename with filename in col 2
 
+# %% test
+for file in FIVE9_CALLS:
+    for record in RENAME_REF_LIST:
+        if file.find(record[0]) is not -1:
+            # oh shit its live, I have 8 calls from last night downloaded!
+            print('gotti!')
+    pass
+pass
 
 # %%
 if __name__ == "__main__":
