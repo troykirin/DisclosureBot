@@ -1,6 +1,7 @@
 # %%
 import os
 import pandas as pd
+import numpy as np
 import asyncio
 
 # Surpress scientific notation
@@ -100,9 +101,16 @@ df_rename
 
 # Drop Nan CID - Missing CID Case
 # Drop Nan FileName & Please find call id
-df_rename = df_rename.dropna(axis=0, inplace=True)
+df_rename = df_rename.dropna(axis=0)
 
-# %%
+# %% Rename file step
+
+# Exactly what I want
+df_rename.values.tolist()
+
+
+# Iterate df_rename by index
+
 
 # %%
 if __name__ == "__main__":
