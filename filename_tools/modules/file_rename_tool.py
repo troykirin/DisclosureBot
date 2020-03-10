@@ -1,5 +1,6 @@
 # %%
 import os
+from os import path
 import pandas as pd
 import numpy as np
 import asyncio
@@ -11,7 +12,10 @@ import asyncio
 # def in_master_data():
 #     pass
 
-# TODO: Set path to home
+# Set path
+if path.exists("/Users/troy/Downloads/"):
+    DOWNLOADS_PATH = "/Users/troy/Downloads/"
+
 
 # %% Read in data
 
@@ -121,8 +125,7 @@ RENAME_REF_LIST = df_rename.values.tolist()
 for file in FIVE9_CALLS:
     for record in RENAME_REF_LIST:
         if file.find(record[0]) is not -1:
-            # oh shit its live, I have 8 calls from last night downloaded!
-            print('gotti!')
+            os.rename()
     pass
 pass
 
