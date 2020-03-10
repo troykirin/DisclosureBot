@@ -132,7 +132,7 @@ RENAME_REF_LIST = df_rename.values.tolist()
 for file in FIVE9_CALLS:
     for record in RENAME_REF_LIST:
         if file.find(record[0]) is not -1:
-            os.rename()
+            os.rename(file, record[1])
     pass
 pass
 
