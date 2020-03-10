@@ -102,8 +102,9 @@ df_rename
 # Drop Nan FileName & Please find call id
 df_rename = df_rename.dropna(axis=0, inplace=True)
 
+# %%
 
 # %%
 if __name__ == "__main__":
-    in_master_data()
+    # master_switch()
     pass
