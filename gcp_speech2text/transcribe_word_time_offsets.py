@@ -36,48 +36,38 @@ from google.oauth2 import service_account
 
 
 # Class variable
-uri_list = ['yee']
+URI_LIST = ['yee']
 
 # Credentials for google cloud account
 credentials = service_account.Credentials.from_service_account_file(
     '/Users/troy/APFM-dev/gcp-transcribe-api-key.json')
 
 
-def getCloudFiles():
+def get_cloud_files():
 
-    global uri_list
+    global URI_LIST
 
     # Read in csv list
     with open('/Users/troy/APFM-dev/disclosure_tools/gcp_speech2text/gcp_transcribe_list.csv', 'r') as infile:
         reader = csv.reader(infile)
-        uri_list = list(reader)
+        URI_LIST = list(reader)
 
     # Flatten list
     flat_list = [
-        item for sublist in uri_list for item in sublist]
+        item for sublist in URI_LIST for item in sublist]
 
     pass
 
 
-def test_func():
-    print("Running test function... \n")
-    global uri_list
-    print(uri_list)
-
-    uri_list.append("haw")
-    pass
-# [START def_transcribe_gcs]
-
-
-def runTheCloud():
+def run_the_cloud():
     # take uri list - chk
 
-    global uri_list
+    global URI_LIST
 
     print("starting to run the cloud.... \n")
 
     # pass into transcription function
-    for item in uri_list:
+    for item in URI_LIST:
         transcribe_gcs_with_word_time_offsets(gcs_uri=item, language='en-US')
         print(f"Just ran {item}")
 
@@ -301,9 +291,8 @@ if __name__ == '__main__':
     # else:
     #     transcribe_file_with_word_time_offsets(args.path, args.string)
 
-    getCloudFiles()
-    runTheCloud()
-    # test_func()
+    get_cloud_files()
+    run_the_cloud()
 
     # transcribe_gcs_with_word_time_offsets()
 
