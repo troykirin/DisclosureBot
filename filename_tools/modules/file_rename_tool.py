@@ -100,9 +100,6 @@ print(f"Check all wav stored...\n {five9_calls}")
 # access df and get cid - not really used
 callid_list = df[['callid']]
 
-
-# %%
-
 # new df of just two columns
 df_CID_and_filename = df[["callid", "file_name"]]
 
@@ -114,7 +111,7 @@ df_CID_and_filename  # GOOD
 
 
 # turn callid into the indexing field
-df_CID_and_filename = df_CID_and_filename.set_index("callid")
+# df_CID_and_filename = df_CID_and_filename.set_index("callid")
 
 # Check shape
 print(df_CID_and_filename.shape)
@@ -127,8 +124,32 @@ df_CID_and_filename
 # %% Search five9_calls list for contain mvp_dict "key"
 # If fiveninelist contains callid then rename to the next column filename value -- LOOP
 
-for index, row in df_CID_and_filename.iterrows():
+# Find uniques
+
+# move from df back to list
+cid_master = []
+filename_master = []
+
+for index, row_data in df_CID_and_filename.iterrows():
+    cid_master.append(row_data['callid'])
+    filename_master.append(row_data['file_name'])
     pass
+
+print(cid_master)
+print(filename_master)
+
+# -- Example using enumerate
+# mylist = [1, 2, 2, 4, 2, 3]
+# for i, j in enumerate(mylist[:-1]):
+#     if j == mylist[i+1]:
+#         mylist[i] = "foo"
+#         mylist[i+1] = "foo"
+# print mylist
+# [1, 'foo', 'foo', 4, 2, 3]
+
+
+if i in cid_master:
+    i == i+1
 
 # %%
 if __name__ == "__main__":
