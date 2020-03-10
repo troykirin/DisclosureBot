@@ -3,61 +3,55 @@ import os
 import pandas as pd
 import asyncio
 
+# Surpress scientific notation
+# pd.reset_option('^display.', silent=True)
+# pd.reset_option('display.float_format')
 
-def in_master_data():
-    # standard header used on master reports
-    standard_header = ["QA Member Name", "Report Date", "TimeOfReport", "1st_round_ref",
-                       "lead_sub_stat", "callid", 'leadid', 'disclosure_date', 'calldate', 'grading_date',
-                       'callType', 'timestamp', 'slaName', 'RMname', 'grade_status', 'email_sent_date',
-                       'aws_link', 'file_name', 'resident_name', 'contact_name', 'property_name',
-                       'property_id', 'property_email', 'sla_quote']
-
-    df = pd.read_csv("./data/master_data.csv", names=standard_header)
-
-    print(df)
-
-    pass
+# def in_master_data():
+#     pass
 
 
-# %% def in_master_data
-standard_header = ["QA Member Name", "Report Date", "TimeOfReport", "1st_round_ref",
-                   "lead_sub_stat", "callid", 'leadid', 'disclosure_date', 'calldate', 'grading_date',
-                   'callType', 'timestamp', 'slaName', 'RMname', 'grade_status', 'email_sent_date',
-                   'aws_link', 'file_name', 'resident_name', 'contact_name', 'property_name',
-                   'property_id', 'property_email', 'sla_quote']
+# %% Read in data
+
+# -- CURRENTLY Requires manually delete first two header rows,
+# from csv export from master sheet
 
 df = pd.read_csv(
-    "/Users/troy/APFM-dev/disclosure_tools/filename_tools/data/master_data.csv", names=standard_header)
+    "/Users/troy/APFM-dev/disclosure_tools/filename_tools/data/master_data2.csv")
+df
 
+# %% Get Names
+df.columns
 
-# %% # Make new dataframe just callid_slaName_lid_filename
-
-# drop columns from dataframe and save to new one
+# %% Drop Non Primary Columns
 
 # preserve df
-orig_df = df
+ORIG_DF = df
 
 # list of columns to keep
-keep_fields = ['callid', 'leadid', 'slaName', 'RMname', 'file_name']
+KEEP_FIELDS = ['QA Team Member Name', 'Report Date',
+               'Call ID #', 'SLA Name', 'RM Name', 'File Name']
 
 # drop with list compare standard header and keep_field. else drop all else
+DROP_LIST = []
 
-drop_list = []
-
-for i in standard_header:
-    if i not in keep_fields:
+for i in df.columns:
+    if i not in KEEP_FIELDS:
         # .then()
         # df = df.drop([i])
 
         # another way possible
-        drop_list.append(i)
+        DROP_LIST.append(i)
         pass
 # df.drop(drop_list)
     pass
 
-print(drop_list)
-df.drop(columns=drop_list)
+print(DROP_LIST)
+df.drop(columns=DROP_LIST)
 
+
+# %% Get only Troy Kirin's Records
+df_troy = df[df['']]
 
 # %% take in directory
 
@@ -135,24 +129,77 @@ for index, row_data in df_CID_and_filename.iterrows():
     filename_master.append(row_data['file_name'])
     pass
 
+# print(cid_master)
+# print(filename_master)
+
+# Remove dupes from cid_master and then corresponding index of filename_master
+
+# Relabel after first occurace as a dupe
+for i, j in enumerate(cid_master[:-1]):
+    if j == cid_master[i+1]:
+        cid_master[i+1] = 'dupe'
+
+# Check
+print(f"making dupes... {cid_master}")
+print(f"current length... {len(cid_master)}")
+
+# Remove
+UNIQUE_LIST = []
+for i, j in enumerate(cid_master):
+    # If value is not of value "dupe" then add to UNIQUE_LIST
+    if j != 'dupe':
+        UNIQUE_LIST.append(j)
+
+
+print(f"Create unique list... {UNIQUE_LIST}")
+print(f"current length... {len(UNIQUE_LIST)}")
+
+
+# %%
+len(cid_master)
+
+# %%
+UNIQUE_LIST = []
+
+for i, j in enumerate(cid_master):
+    if j != "dupe":
+        UNIQUE_LIST.append(j)
+
+print(UNIQUE_LIST)
+# %%
+
+DUPES_INDICIES = []
+
+for i, j in enumerate(cid_master):
+    if j == 'dupe':
+        # append to indicies to delete
+        DUPES_INDICIES.append(i)
+print(DUPES_INDICIES)
+
+len(DUPES_INDICIES)
+
+
+# %%
+del cid_master[0]
 print(cid_master)
-print(filename_master)
+len(cid_master)
 
-# %% PLAY
-# -- Example using enumerate
-mylist = [1, 2, 2, 4, 2, 3]
-for i, j in enumerate(mylist[:-1]):  # i and j are same values.
+# %%
+# remove list of index
+for i, j in enumerate(DUPES_INDICIES):
+    del cid_master[DUPES_INDICIES[i]]
 
-    if j == mylist[i+1]:
-        mylist[i] = "foo"
-        mylist[i+1] = "foo"
-print(mylist)
-[1, 'foo', 'foo', 4, 2, 3]
+
+print(cid_master)
+# %%
+print("\n")
+print(cid_master)
 
 # %%
 # Example identify and remove duplicates from a list
 
 test_list = ['a', 'a', 'b', 'c']
+other_list = [1, 1, 2, 3]
 
 for index, value in enumerate(test_list[:-1]):
     print(f"this is i.... {index}")
