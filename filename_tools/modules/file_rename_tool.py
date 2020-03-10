@@ -12,17 +12,10 @@ def in_master_data():
                        'aws_link', 'file_name', 'resident_name', 'contact_name', 'property_name',
                        'property_id', 'property_email', 'sla_quote']
 
-    df = pd.read_csv("master_data.csv", names=standard_header)
+    df = pd.read_csv("./data/master_data.csv", names=standard_header)
 
     print(df)
 
-    pass
-
-# %%
-
-
-if __name__ == "__main__":
-    in_master_data()
     pass
 
 
@@ -33,7 +26,8 @@ standard_header = ["QA Member Name", "Report Date", "TimeOfReport", "1st_round_r
                    'aws_link', 'file_name', 'resident_name', 'contact_name', 'property_name',
                    'property_id', 'property_email', 'sla_quote']
 
-df = pd.read_csv("master_data.csv", names=standard_header)
+df = pd.read_csv(
+    "/Users/troy/APFM-dev/disclosure_tools/filename_tools/data/master_data.csv", names=standard_header)
 
 
 # %% # Make new dataframe just callid_slaName_lid_filename
@@ -92,11 +86,12 @@ for file in files_list:
     if file.find(".wav") is not -1:
         five9_calls.append(file)
 
-# print(f"Check all wav stored...\n {five9_calls}")
+print(f"Check all wav stored...\n {five9_calls}")
+
 
 # %% Dict step
 
-# mvp_dict = {'key': 'value'}
+# """ mvp_dict = {'key': 'value'} """
 
 # create a new df -- contain only the values in five9_calls list
 
@@ -109,32 +104,33 @@ callid_list = df[['callid']]
 # %%
 
 # new df of just two columns
-df3 = df[["callid", "file_name"]]
+df_CID_and_filename = df[["callid", "file_name"]]
 
 # remove header row
-df3 = df3[1:]
+df_CID_and_filename = df_CID_and_filename[1:]
 
 # check
-df3
+df_CID_and_filename  # GOOD
 
-# %%
 
 # turn callid into the indexing field
-df3 = df3.set_index("callid").transpose()
+df_CID_and_filename = df_CID_and_filename.set_index("callid")
 
-# create dictionary
-mvp_dict = df3.to_dict("list")
+# Check shape
+print(df_CID_and_filename.shape)
 
-print(mvp_dict)
+# Check
+df_CID_and_filename
 
-# search five9_calls list for contain mvp_dict "key"
+# looks good
 
+# %% Search five9_calls list for contain mvp_dict "key"
+# If fiveninelist contains callid then rename to the next column filename value -- LOOP
+
+for index, row in df_CID_and_filename.iterrows():
+    pass
 
 # %%
-len(mvp_dict)
-
-# %%
-
-print(mvp_dict)
-
-# %%
+if __name__ == "__main__":
+    in_master_data()
+    pass
