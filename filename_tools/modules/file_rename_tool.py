@@ -10,6 +10,7 @@ import asyncio
 # def in_master_data():
 #     pass
 
+# TODO: Set path to home
 
 # %% Read in data
 
@@ -51,177 +52,56 @@ df.drop(columns=DROP_LIST)
 
 
 # %% Get only Troy Kirin's Records
-df_troy = df[df['']]
 
-# %% take in directory
+# Get indicies
+incidies_df = df[df['QA Team Member Name'] != 'Troy Kirinhakone'].index
 
-# read in the files of a directory
+# Delete else
+df.drop(incidies_df, inplace=True)
 
-# save that list of files to a list
+df
 
-# parse that list and do a search on that string for the callid
-# if callid is found then fileRename with the file_name value
+# %% Gather info from local
 
-# create a dictionary k,v
-# such that the key is callID and the value is the file_name
-
+# Files list
 files_list = []
 
+# Get all files in Downloads Dir
 for filename in os.listdir("/Users/troy/Downloads"):
     files_list.append(filename)
     pass
 
-# print(files_list) # OK
-
-# find .wav files
+# Apend filename of five9 calls
 five9_calls = []
 
+# If file is .wav type then append filename onto list
 for file in files_list:
     if file.find(".wav") is not -1:
         five9_calls.append(file)
 
+# Validation
 print(f"Check all wav stored...\n {five9_calls}")
 
 
-# %% Dict step
+# %% Slice Dataframe to CID + Filename
 
-# """ mvp_dict = {'key': 'value'} """
+# create df_rename contain 'Call ID #' and 'File Name'
+df_rename = df[["Call ID #", "File Name"]]
 
-# create a new df -- contain only the values in five9_calls list
+# Validation
+print(df_rename)
+print(df_rename.shape)
 
-# ^^^ CURRENT PLACE / ISSUE with slicing data
+# %% Prepare lists for rename
 
-# access df and get cid - not really used
-callid_list = df[['callid']]
+# Drop any records of duplicate File Names
+df_rename.drop_duplicates(subset='File Name', inplace=True)
+df_rename
 
-# new df of just two columns
-df_CID_and_filename = df[["callid", "file_name"]]
+# Drop Nan CID - Missing CID Case
+# Drop Nan FileName & Please find call id
+df_rename = df_rename.dropna(axis=0, inplace=True)
 
-# remove header row
-df_CID_and_filename = df_CID_and_filename[1:]
-
-# check
-df_CID_and_filename  # GOOD
-
-
-# turn callid into the indexing field
-# df_CID_and_filename = df_CID_and_filename.set_index("callid")
-
-# Check shape
-print(df_CID_and_filename.shape)
-
-# Check
-df_CID_and_filename
-
-# looks good
-
-# %% Search five9_calls list for contain mvp_dict "key"
-# If fiveninelist contains callid then rename to the next column filename value -- LOOP
-
-# Find uniques
-
-# move from df back to list
-cid_master = []
-filename_master = []
-
-for index, row_data in df_CID_and_filename.iterrows():
-    cid_master.append(row_data['callid'])
-    filename_master.append(row_data['file_name'])
-    pass
-
-# print(cid_master)
-# print(filename_master)
-
-# Remove dupes from cid_master and then corresponding index of filename_master
-
-# Relabel after first occurace as a dupe
-for i, j in enumerate(cid_master[:-1]):
-    if j == cid_master[i+1]:
-        cid_master[i+1] = 'dupe'
-
-# Check
-print(f"making dupes... {cid_master}")
-print(f"current length... {len(cid_master)}")
-
-# Remove
-UNIQUE_LIST = []
-for i, j in enumerate(cid_master):
-    # If value is not of value "dupe" then add to UNIQUE_LIST
-    if j != 'dupe':
-        UNIQUE_LIST.append(j)
-
-
-print(f"Create unique list... {UNIQUE_LIST}")
-print(f"current length... {len(UNIQUE_LIST)}")
-
-
-# %%
-len(cid_master)
-
-# %%
-UNIQUE_LIST = []
-
-for i, j in enumerate(cid_master):
-    if j != "dupe":
-        UNIQUE_LIST.append(j)
-
-print(UNIQUE_LIST)
-# %%
-
-DUPES_INDICIES = []
-
-for i, j in enumerate(cid_master):
-    if j == 'dupe':
-        # append to indicies to delete
-        DUPES_INDICIES.append(i)
-print(DUPES_INDICIES)
-
-len(DUPES_INDICIES)
-
-
-# %%
-del cid_master[0]
-print(cid_master)
-len(cid_master)
-
-# %%
-# remove list of index
-for i, j in enumerate(DUPES_INDICIES):
-    del cid_master[DUPES_INDICIES[i]]
-
-
-print(cid_master)
-# %%
-print("\n")
-print(cid_master)
-
-# %%
-# Example identify and remove duplicates from a list
-
-test_list = ['a', 'a', 'b', 'c']
-other_list = [1, 1, 2, 3]
-
-for index, value in enumerate(test_list[:-1]):
-    print(f"this is i.... {index}")
-    print(f"this is j.... {value}")
-
-    if value == test_list[index+1]:
-        test_list[index+1] = 'dupe'
-
-print(test_list)
-
-# remove dupes
-for i in test_list:
-    if i == 'dupe':
-        test_list.remove(i)
-
-print(f"final list... {test_list}")
-
-# %%
-
-
-if i in cid_master:
-    i == i+1
 
 # %%
 if __name__ == "__main__":
