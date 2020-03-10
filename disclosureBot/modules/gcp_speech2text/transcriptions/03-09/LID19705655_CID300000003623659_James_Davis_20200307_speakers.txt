@@ -1,0 +1,337 @@
+Below is Transcript with Speaker tags: 
+Word: please
+Speaker tag: 0
+Word: confirm
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: are
+Speaker tag: 0
+Word: smelly
+Speaker tag: 0
+Word: yes
+Speaker tag: 0
+Word: great
+Speaker tag: 0
+Word: lines
+Speaker tag: 0
+Word: are
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: mad
+Speaker tag: 0
+Word: at
+Speaker tag: 0
+Word: me
+Speaker tag: 0
+Word: your
+Speaker tag: 0
+Word: name
+Speaker tag: 0
+Word: closures
+Speaker tag: 0
+Word: easier
+Speaker tag: 0
+Word: for
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: haven't
+Speaker tag: 0
+Word: actually
+Speaker tag: 0
+Word: had
+Speaker tag: 0
+Word: mine
+Speaker tag: 0
+Word: over
+Speaker tag: 0
+Word: the
+Speaker tag: 0
+Word: phone
+Speaker tag: 0
+Word: now
+Speaker tag: 0
+Word: recording
+Speaker tag: 0
+Word: this
+Speaker tag: 0
+Word: conversation
+Speaker tag: 0
+Word: is
+Speaker tag: 0
+Word: not
+Speaker tag: 0
+Word: our
+Speaker tag: 0
+Word: day
+Speaker tag: 0
+Word: so
+Speaker tag: 0
+Word: much
+Speaker tag: 0
+Word: to
+Speaker tag: 0
+Word: know
+Speaker tag: 0
+Word: our
+Speaker tag: 0
+Word: service
+Speaker tag: 0
+Word: is
+Speaker tag: 0
+Word: free
+Speaker tag: 0
+Word: to
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: as
+Speaker tag: 0
+Word: repaid
+Speaker tag: 0
+Word: referral
+Speaker tag: 0
+Word: for
+Speaker tag: 0
+Word: by
+Speaker tag: 0
+Word: our
+Speaker tag: 0
+Word: partner
+Speaker tag: 0
+Word: communities
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: please
+Speaker tag: 0
+Word: help
+Speaker tag: 0
+Word: me
+Speaker tag: 0
+Word: fit
+Speaker tag: 0
+Word: and
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: decide
+Speaker tag: 0
+Word: to
+Speaker tag: 0
+Word: move
+Speaker tag: 0
+Word: back
+Speaker tag: 0
+Word: to
+Speaker tag: 0
+Word: the
+Speaker tag: 0
+Word: Huntsman
+Speaker tag: 0
+Word: Springs
+Speaker tag: 0
+Word: up
+Speaker tag: 0
+Word: on
+Speaker tag: 0
+Word: the
+Speaker tag: 0
+Word: agreement
+Speaker tag: 0
+Word: because
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: use
+Speaker tag: 0
+Word: our
+Speaker tag: 0
+Word: server
+Speaker tag: 0
+Word: do
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: understand
+Speaker tag: 0
+Word: our
+Speaker tag: 0
+Word: services
+Speaker tag: 0
+Word: are
+Speaker tag: 0
+Word: free
+Speaker tag: 0
+Word: deals
+Speaker tag: 0
+Word: please
+Speaker tag: 2
+Word: confirm
+Speaker tag: 2
+Word: you
+Speaker tag: 2
+Word: are
+Speaker tag: 2
+Word: smelly
+Speaker tag: 2
+Word: yes
+Speaker tag: 1
+Word: great
+Speaker tag: 1
+Word: lines
+Speaker tag: 1
+Word: are
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: mad
+Speaker tag: 2
+Word: at
+Speaker tag: 2
+Word: me
+Speaker tag: 2
+Word: your
+Speaker tag: 2
+Word: name
+Speaker tag: 2
+Word: closures
+Speaker tag: 2
+Word: easier
+Speaker tag: 2
+Word: for
+Speaker tag: 2
+Word: you
+Speaker tag: 2
+Word: haven't
+Speaker tag: 2
+Word: actually
+Speaker tag: 2
+Word: had
+Speaker tag: 2
+Word: mine
+Speaker tag: 2
+Word: over
+Speaker tag: 2
+Word: the
+Speaker tag: 2
+Word: phone
+Speaker tag: 2
+Word: now
+Speaker tag: 2
+Word: recording
+Speaker tag: 2
+Word: this
+Speaker tag: 2
+Word: conversation
+Speaker tag: 2
+Word: is
+Speaker tag: 2
+Word: not
+Speaker tag: 2
+Word: our
+Speaker tag: 2
+Word: day
+Speaker tag: 2
+Word: so
+Speaker tag: 2
+Word: much
+Speaker tag: 2
+Word: to
+Speaker tag: 2
+Word: know
+Speaker tag: 2
+Word: our
+Speaker tag: 2
+Word: service
+Speaker tag: 2
+Word: is
+Speaker tag: 2
+Word: free
+Speaker tag: 2
+Word: to
+Speaker tag: 2
+Word: you
+Speaker tag: 2
+Word: as
+Speaker tag: 2
+Word: repaid
+Speaker tag: 2
+Word: referral
+Speaker tag: 2
+Word: for
+Speaker tag: 2
+Word: by
+Speaker tag: 2
+Word: our
+Speaker tag: 2
+Word: partner
+Speaker tag: 2
+Word: communities
+Speaker tag: 2
+Word: you
+Speaker tag: 2
+Word: please
+Speaker tag: 2
+Word: help
+Speaker tag: 2
+Word: me
+Speaker tag: 2
+Word: fit
+Speaker tag: 2
+Word: and
+Speaker tag: 2
+Word: you
+Speaker tag: 2
+Word: decide
+Speaker tag: 2
+Word: to
+Speaker tag: 2
+Word: move
+Speaker tag: 2
+Word: back
+Speaker tag: 2
+Word: to
+Speaker tag: 2
+Word: the
+Speaker tag: 2
+Word: Huntsman
+Speaker tag: 2
+Word: Springs
+Speaker tag: 2
+Word: up
+Speaker tag: 2
+Word: on
+Speaker tag: 2
+Word: the
+Speaker tag: 2
+Word: agreement
+Speaker tag: 2
+Word: because
+Speaker tag: 2
+Word: you
+Speaker tag: 2
+Word: use
+Speaker tag: 2
+Word: our
+Speaker tag: 2
+Word: server
+Speaker tag: 2
+Word: do
+Speaker tag: 2
+Word: you
+Speaker tag: 2
+Word: understand
+Speaker tag: 2
+Word: our
+Speaker tag: 2
+Word: services
+Speaker tag: 2
+Word: are
+Speaker tag: 2
+Word: free
+Speaker tag: 2
+Word: deals
+Speaker tag: 2

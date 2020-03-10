@@ -1,0 +1,205 @@
+Below is Transcript with Speaker tags: 
+Word: please
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: are
+Speaker tag: 0
+Word: Salaam
+Speaker tag: 0
+Word: great
+Speaker tag: 0
+Word: thanks
+Speaker tag: 0
+Word: for
+Speaker tag: 0
+Word: doing
+Speaker tag: 0
+Word: that
+Speaker tag: 0
+Word: I
+Speaker tag: 0
+Word: do
+Speaker tag: 0
+Word: I
+Speaker tag: 0
+Word: know
+Speaker tag: 0
+Word: alright
+Speaker tag: 0
+Word: but
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: know
+Speaker tag: 0
+Word: our
+Speaker tag: 0
+Word: service
+Speaker tag: 0
+Word: to
+Speaker tag: 0
+Word: cuz
+Speaker tag: 0
+Word: we
+Speaker tag: 0
+Word: are
+Speaker tag: 0
+Word: paid
+Speaker tag: 0
+Word: a
+Speaker tag: 0
+Word: referral
+Speaker tag: 0
+Word: fee
+Speaker tag: 0
+Word: only
+Speaker tag: 0
+Word: if
+Speaker tag: 0
+Word: we
+Speaker tag: 0
+Word: have
+Speaker tag: 0
+Word: Siri
+Speaker tag: 0
+Word: this
+Speaker tag: 0
+Word: to
+Speaker tag: 0
+Word: 100
+Speaker tag: 0
+Word: Brent
+Speaker tag: 0
+Word: no
+Speaker tag: 0
+Word: charge
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: more
+Speaker tag: 0
+Word: cuz
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: service
+Speaker tag: 0
+Word: do
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: understand
+Speaker tag: 0
+Word: service
+Speaker tag: 0
+Word: our
+Speaker tag: 0
+Word: freedom
+Speaker tag: 0
+Word: you
+Speaker tag: 0
+Word: yep
+Speaker tag: 0
+Word: please
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: are
+Speaker tag: 1
+Word: Salaam
+Speaker tag: 1
+Word: great
+Speaker tag: 1
+Word: thanks
+Speaker tag: 1
+Word: for
+Speaker tag: 1
+Word: doing
+Speaker tag: 1
+Word: that
+Speaker tag: 1
+Word: I
+Speaker tag: 1
+Word: do
+Speaker tag: 1
+Word: I
+Speaker tag: 1
+Word: know
+Speaker tag: 1
+Word: alright
+Speaker tag: 1
+Word: but
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: know
+Speaker tag: 1
+Word: our
+Speaker tag: 1
+Word: service
+Speaker tag: 1
+Word: to
+Speaker tag: 1
+Word: cuz
+Speaker tag: 1
+Word: we
+Speaker tag: 1
+Word: are
+Speaker tag: 1
+Word: paid
+Speaker tag: 1
+Word: a
+Speaker tag: 1
+Word: referral
+Speaker tag: 1
+Word: fee
+Speaker tag: 1
+Word: only
+Speaker tag: 1
+Word: if
+Speaker tag: 1
+Word: we
+Speaker tag: 1
+Word: have
+Speaker tag: 1
+Word: Siri
+Speaker tag: 1
+Word: this
+Speaker tag: 1
+Word: to
+Speaker tag: 1
+Word: 100
+Speaker tag: 1
+Word: Brent
+Speaker tag: 1
+Word: no
+Speaker tag: 1
+Word: charge
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: more
+Speaker tag: 1
+Word: cuz
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: service
+Speaker tag: 1
+Word: do
+Speaker tag: 1
+Word: you
+Speaker tag: 1
+Word: understand
+Speaker tag: 1
+Word: service
+Speaker tag: 1
+Word: our
+Speaker tag: 1
+Word: freedom
+Speaker tag: 2
+Word: you
+Speaker tag: 2
+Word: yep
+Speaker tag: 2
