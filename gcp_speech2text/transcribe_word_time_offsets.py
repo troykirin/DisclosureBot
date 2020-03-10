@@ -24,12 +24,13 @@ Example usage:
     python transcribe_word_time_offsets.py -s <language> \gs://cloud-samples-tests/speech/vr.flac
 """
 # %%
-import argparse
-import io
+
+# --- Imports ---
+# import argparse
+# import io
 import csv
 import os
-import errno
-
+# import errno
 
 from google.oauth2 import service_account
 
@@ -187,7 +188,8 @@ def transcribe_gcs_with_word_time_offsets(gcs_uri, language):
 
     # Form 1
     config = {
-        "encoding": enums.RecognitionConfig.AudioEncoding.LINEAR16,
+        # "encoding": enums.RecognitionConfig.AudioEncoding.LINEAR16,
+        "encoding": "MP3",
         "sample_rate_hertz": 8000,
         "language_code": 'en-US',
         "enable_word_time_offsets": True,
