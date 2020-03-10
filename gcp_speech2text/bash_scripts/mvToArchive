@@ -1,5 +1,5 @@
 #!/bin/bash
 
-gsutil mv 'gs://apfm-dev/*.wav' 'gs://apfm-dev/archive'
+gsutil mv 'gs://apfm-dev/*.mp3' 'gs://apfm-dev/archive'
 
-echo "Moving .wav into archive."
+echo "Moving .mp3 into archive."
