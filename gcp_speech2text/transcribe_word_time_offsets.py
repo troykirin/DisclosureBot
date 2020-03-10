@@ -56,15 +56,6 @@ def getCloudFiles():
     flat_list = [
         item for sublist in uri_list for item in sublist]
 
-    # test 1
-    uri_list = flat_list
-    print(f"Test 1 {uri_list} \n")
-
-    # test 2
-    print("Test 2: \n")
-    for i in uri_list:
-        print(f"{i}")
-    print("\n")
     pass
 
 
