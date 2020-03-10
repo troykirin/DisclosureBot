@@ -1,7 +1,0 @@
-Below is transcript: for gs://apfm-dev/LID19652251_CID86024156_Susan_Bird_20200211.wav
-Transcript: can you please confirm you are Susan bird yes great I am sitting there okay thanks for doing that again Susan who in addition to confirming your name I need a record that I provided you with these disclosures and I also need you to sign it but to make it easier for you instead of having to physically sign something we can actually have you sign over the phone now bye recording this conversation is that alright that's fine perfect thank you and just to let you know our service is free to use Susan because we're paid a referral fee by our partner communities if we help you find a good fit and you decide to move in that referral fee range is from 78 to 100 and 20% of the first month's rent depending upon the agreement with the community no one can ever charge you more because you use our services do you understand season that our services 
-Confidence Score: 0.7351324558258057 
-Transcript:  is our free to you 
-Confidence Score: 0.7559732794761658 
-Transcript:  
-Confidence Score: 0.0 
