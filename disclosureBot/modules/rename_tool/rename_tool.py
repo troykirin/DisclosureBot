@@ -87,7 +87,7 @@ def master_switch():
     for file in FIVE9_CALLS:
         for record in RENAME_REF_LIST:
             if file.find(record[0]) is not -1:
-                os.rename(file, record[1]+".wav")
+                os.rename(file, record[1] + ".wav")
 
 
 if __name__ == "__main__":
