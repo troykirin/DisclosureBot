@@ -1,5 +1,0 @@
-{
-  "python.pythonPath": "/Users/troy/miniconda3/envs/apfm/bin/python",
-  "python.linting.pycodestyleEnabled": true,
-  "python.linting.pycodestyleArgs": ["--ignore=E501"]
-}
