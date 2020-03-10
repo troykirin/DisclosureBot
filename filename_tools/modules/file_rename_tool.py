@@ -19,9 +19,10 @@ if path.exists("/Users/troy/Downloads/"):
 # Change Path / Working Directory
 os.chdir(DOWNLOADS_PATH)
 
-# %% test OS RENAME
+# ___ TESTING ___
+# test OS RENAME
 # os.rename(DOWNLOADS_PATH+"pathfinder.wav",DOWNLOADS_PATH+"test.wav")
-os.rename("test.wav", "devPath_BotDev.wav")
+# os.rename("test.wav", "devPath_BotDev.wav")
 
 # %% Read in data
 
