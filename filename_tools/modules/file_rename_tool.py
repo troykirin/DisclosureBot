@@ -138,14 +138,39 @@ for index, row_data in df_CID_and_filename.iterrows():
 print(cid_master)
 print(filename_master)
 
+# %% PLAY
 # -- Example using enumerate
-# mylist = [1, 2, 2, 4, 2, 3]
-# for i, j in enumerate(mylist[:-1]):
-#     if j == mylist[i+1]:
-#         mylist[i] = "foo"
-#         mylist[i+1] = "foo"
-# print mylist
-# [1, 'foo', 'foo', 4, 2, 3]
+mylist = [1, 2, 2, 4, 2, 3]
+for i, j in enumerate(mylist[:-1]):  # i and j are same values.
+
+    if j == mylist[i+1]:
+        mylist[i] = "foo"
+        mylist[i+1] = "foo"
+print(mylist)
+[1, 'foo', 'foo', 4, 2, 3]
+
+# %%
+# Example identify and remove duplicates from a list
+
+test_list = ['a', 'a', 'b', 'c']
+
+for index, value in enumerate(test_list[:-1]):
+    print(f"this is i.... {index}")
+    print(f"this is j.... {value}")
+
+    if value == test_list[index+1]:
+        test_list[index+1] = 'dupe'
+
+print(test_list)
+
+# remove dupes
+for i in test_list:
+    if i == 'dupe':
+        test_list.remove(i)
+
+print(f"final list... {test_list}")
+
+# %%
 
 
 if i in cid_master:
