@@ -1,6 +1,7 @@
 #/bin/bash
 
-python /Users/troy/APFM-dev/disclosure_tools/filename_tools/app.py
+python /Users/troy/APFM-dev/disclosure_bot/disclosureBot/modules/rename_tool/rename_tool.py
+
 
 echo "Rename complete :)"
 
