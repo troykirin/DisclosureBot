@@ -5,3 +5,4 @@ data/
 other/*
 gcp_speech2text/transcriptions/
 gcp_speech2text/gcp_transcribe_list.csv
+disclosureBot/modules/time_finder/test_data/*
