@@ -24,3 +24,15 @@ df = pd.read_csv("./test_data/test_five9_call_data.csv")
 df
 
 # %%
+df_recordings = df[['RECORDINGS']]
+
+
+# %%
+df_recordings
+
+# %%
+df_recordings.iloc[0]
+
+# Split by white space
+
+# %%
