@@ -1,8 +1,10 @@
+# %%
 import os
 from os import path
 import pandas as pd
 import numpy as np
 import asyncio
+import glob
 
 
 def master_switch():
@@ -20,8 +22,14 @@ def master_switch():
     # CURRENTLY Requires manually delete first two header rows,
     # from csv export from master sheet
 
-    df = pd.read_csv(
-        "/Users/troy/APFM-dev/disclosure_bot/data/master_data.csv")
+    # TODO: Delete all characters in first two rows
+    # could be up to QA TEAM MEMBER NAME String found
+
+    report_data = glob.glob(
+        "/Users/troy/APFM-dev/disclosure_bot/data/*Report.csv")
+    print(report_data)
+
+    df = pd.read_csv(report_data[0])
 
     # __Drop Non Primary Columns__
 
@@ -90,5 +98,9 @@ def master_switch():
                 os.rename(file, record[1] + ".wav")
 
 
+# %%
 if __name__ == "__main__":
     master_switch()
+
+
+# %%
