@@ -1,0 +1,10 @@
+#/bin/bash
+
+# Upload all .mp3 snippets into s3
+aws s3 cp ~/APFM/ROOT_AZ/Snippets/ s3://callrecordings-apfm-usw2/Disclosures/2020/Arizona/ --recursive --include "*.mp3" --exclude "day_done/*" --exclude "archive/*" --exclude "upload_s3" --exclude ".DS_Store"
+
+# Go  to local snippet folder
+cd ~/APFM/ROOT_AZ/Snippets/
+
+# Move uploaded mp3 into a excluded folder "day_done"
+mv *.mp3 day_done
